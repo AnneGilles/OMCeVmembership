@@ -14,5 +14,10 @@ def main(global_config, **settings):
     config.add_view('omcevmembership.views.my_view',
                     route_name='home',
                     renderer='templates/mytemplate.pt')
+    # beitrittserklaerung
+    config.add_route('beitrittserklaerung', '/beitrittserklaerung')
+    config.add_view('omcevmembership.views.join_membership',
+                    route_name='beitrittserklaerung',
+                    renderer='templates/join.pt')
     return config.make_wsgi_app()
 
