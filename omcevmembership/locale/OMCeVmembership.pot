@@ -2,14 +2,14 @@
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the OMCeVmembership
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# Christoph Scheid <c@openmusiccontest.org>, 2011.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-11-09 11:17+0100\n"
+"POT-Creation-Date: 2011-11-09 14:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,4 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#. Default: Membership Form
+#: omcevmembership/templates/join.pt:10
+msgid "membership-form"
+msgstr ""
+
+#. Default: Please fill out this form and submit it. You will get a PDF document
+#. with your information in it. If you want us to retract your membership fee from
+#. your bank account in an automatized way, add information about your bank
+#. account. Then print the document and sign it and finally mail it back to us.
+#: omcevmembership/templates/join.pt:14
+msgid "join-form-intro"
+msgstr ""
 
