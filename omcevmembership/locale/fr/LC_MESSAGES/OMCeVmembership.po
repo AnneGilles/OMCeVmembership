@@ -1,4 +1,4 @@
-# German translations for OMCeVmembership.
+# French translations for OMCeVmembership.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the OMCeVmembership
 # project.
@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-11-09 14:11+0100\n"
-"PO-Revision-Date: 2011-11-09 14:13+0100\n"
-"Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"PO-Revision-Date: 2011-11-09 14:20+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. Default: Membership Form
 #: omcevmembership/templates/join.pt:10
 msgid "membership-form"
-msgstr "Beitrittserklärung"
+msgstr ""
 
 #. Default: Please fill out this form and submit it. You will get a PDF
 #. document
@@ -31,5 +31,5 @@ msgstr "Beitrittserklärung"
 #. account. Then print the document and sign it and finally mail it back to us.
 #: omcevmembership/templates/join.pt:14
 msgid "join-form-intro"
-msgstr "Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann bitte ausdrucken, unterschreiben und an uns zurücksenden."
+msgstr ""
 
