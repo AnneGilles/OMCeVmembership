@@ -16,6 +16,8 @@ requires = [
     'zope.sqlalchemy',
     'pyramid_simpleform',
     'fdfgen',
+    'Babel',
+    'lingua',
     ]
 
 if sys.version_info[:3] < (2,5,0):
@@ -31,9 +33,9 @@ setup(name='OMCeVmembership',
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         ],
-      author='',
-      author_email='',
-      url='',
+      author='Christoph Scheid',
+      author_email='c@openmusiccontest.org',
+      url='http://www.openmusiccontest.org',
       keywords='web wsgi bfg pylons pyramid',
       packages=find_packages(),
       include_package_data=True,
@@ -45,5 +47,9 @@ setup(name='OMCeVmembership',
       main = omcevmembership:main
       """,
       paster_plugins=['pyramid'],
+      message_extractors = { '.': [
+            ('**.py',   'lingua_python', None ),
+            ('**.pt',   'lingua_xml', None ),
+            ]},
       )
 
