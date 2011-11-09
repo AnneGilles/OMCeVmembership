@@ -8,6 +8,11 @@ from pyramid_simpleform.renderers import FormRenderer
 from fdfgen import forge_fdf
 from datetime import datetime
 
+from pyramid.i18n import (
+    get_localizer,
+    get_locale_name,
+    )
+
 def my_view(request):
     dbsession = DBSession()
     root = dbsession.query(MyModel).filter(MyModel.name==u'root').first()
@@ -29,6 +34,20 @@ class MembershipSchema(formencode.Schema):
 
 
 def join_membership(request):
+
+    locale = get_localizer(request)
+
+    print "-- locale: " + str(locale)
+    print "-- dir(locale): " + str(dir(locale))
+    #print "-- help(locale): " + str(help(locale))
+    print "-- locale.locale_name: " + locale.locale_name
+
+    locale_name = get_locale_name(request)
+    print "-- locale_name: " + str(locale_name)
+    print "-- dir(locale_name): " + str(dir(locale_name))
+    #print "-- help(locale): " + str(help(locale))
+    #print "-- locale_name.locale_name: " + locale.locale_name
+
 
     form = Form(request, schema = MembershipSchema)
 
