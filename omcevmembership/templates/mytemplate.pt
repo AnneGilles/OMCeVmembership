@@ -40,7 +40,7 @@
               <a href="#">Membership Options</a>
             </li>
             <li>
-              <a href="#">Join</a>
+              <a href="${request.route_url('beitrittserklaerung')}">Join</a>
             </li>
           </ul>
         </div>
