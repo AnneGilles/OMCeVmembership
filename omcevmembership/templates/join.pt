@@ -1,10 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal">
-  
-  <!-- tal:block metal:fill-slot="content" -->
-  <h1>Membership Form</h1>
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="base">
+
+  <tal:block metal:fill-slot="middle">
+    <h1>Membership Form</h1>
+  </tal:block>
+
+  <tal:block metal:fill-slot="bottom">
   ${form.begin(request.route_url('beitrittserklaerung'))}
   <fieldset>
     <table>
@@ -97,5 +101,5 @@
     </table>
   </fieldset>
   ${form.end()}
-  <!-- /tal:block -->  
+  </tal:block>
 </html>

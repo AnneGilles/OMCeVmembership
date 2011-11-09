@@ -10,6 +10,10 @@ def main(global_config, **settings):
     initialize_sql(engine)
     config = Configurator(settings=settings)
     config.add_static_view('static', 'omcevmembership:static', cache_max_age=3600)
+
+    config.add_subscriber('omcevmembership.subscribers.add_base_template',
+                          'pyramid.events.BeforeRender')
+
     config.add_route('home', '/')
     config.add_view('omcevmembership.views.my_view',
                     route_name='home',
