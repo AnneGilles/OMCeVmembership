@@ -38,13 +38,13 @@ def join_membership(request):
     locale = get_localizer(request)
 
     print "-- locale: " + str(locale)
-    print "-- dir(locale): " + str(dir(locale))
+    #print "-- dir(locale): " + str(dir(locale))
     #print "-- help(locale): " + str(help(locale))
     print "-- locale.locale_name: " + locale.locale_name
 
     locale_name = get_locale_name(request)
     print "-- locale_name: " + str(locale_name)
-    print "-- dir(locale_name): " + str(dir(locale_name))
+    #print "-- dir(locale_name): " + str(dir(locale_name))
     #print "-- help(locale): " + str(help(locale))
     #print "-- locale_name.locale_name: " + locale.locale_name
 
