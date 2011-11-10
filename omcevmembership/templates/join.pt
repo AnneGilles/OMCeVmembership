@@ -3,8 +3,8 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n" 
-      i18n:domain="OMCeVmembership"
-      metal:use-macro="base">
+      metal:use-macro="base"
+      i18n:domain="OMCeVmembership">
   <tal:block metal:fill-slot="middle">
     <h1 i18n:translate="membership-form">Membership Form</h1>
   </tal:block>
@@ -14,20 +14,12 @@
       If you want us to retract your membership fee from your bank account in an automatized way, 
       add information about your bank account. Then print the document and sign it and finally mail it back to us.
     </p>
+    <p>
+      &nbsp;
+    </p>
     ${form.begin(request.route_url('beitrittserklaerung'))}
     <fieldset>
       <table>
-	<tr><!-- type -->
-	  <td>
-	    ${form.label('membership_type', 'Membership Type:')}
-	  </td>
-	  <td>
-	    ${form.select('membership_type', [u'supporter: 42 Euro', u'ordinary: 23 Euro'], selected_value='ordinary: 23 Euro')}
-	  </td>
-	  <td>
-	    ${form.errorlist('membership_type')}
-	  </td>
-	</tr>
 	<tr><!-- name -->
 	  <td>
 	    ${form.label('lastname', 'Lastname:')}
