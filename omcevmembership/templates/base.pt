@@ -17,7 +17,7 @@
   <div id="wrap">
     <div id="top">
       <div class="top align-center">
-        <div><img src="${request.static_url('omcevmembership:static/omc.org.png')}" width="340" height="60" alt="OpenMusicContest.org"/></div>
+        <div><a href="${request.route_url('home')}"><img src="${request.static_url('omcevmembership:static/omc.org.png')}" width="340" height="60" alt="OpenMusicContest.org Membership App"/></a></div>
       </div>
     </div>
     <div id="middle">
