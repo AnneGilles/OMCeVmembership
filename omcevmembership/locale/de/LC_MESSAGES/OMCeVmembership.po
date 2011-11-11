@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-11-09 14:11+0100\n"
-"PO-Revision-Date: 2011-11-09 14:13+0100\n"
+"POT-Creation-Date: 2011-11-11 13:28+0100\n"
+"PO-Revision-Date: 2011-11-11 13:34+0100\n"
 "Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -18,8 +18,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
+#. Default: Welcome to the OpenMusicContest.org e.V. Membership app.<dynamic
+#. element> We'd love to have <dynamic element> as one of our members!
+#: omcevmembership/templates/home.pt:8
+msgid "app-welcome"
+msgstr "Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic element> Wir würden uns über Dich als neues Mitglied freuen!"
+
+#. Default: Become a member
+#: omcevmembership/templates/home.pt:17
+msgid "become-a-member"
+msgstr "Werde Mitglied"
+
+#. Default: General Information
+#: omcevmembership/templates/home.pt:20
+msgid "general-information-link"
+msgstr "Allgemeine Informationen"
+
+#. Default: Membership Options
+#: omcevmembership/templates/home.pt:23
+#| msgid "membership-form"
+msgid "membership-options-link"
+msgstr "Welche Mitgliedschaft?"
+
+#. Default: Join
+#: omcevmembership/templates/home.pt:26
+msgid "join-link"
+msgstr "Zum Beitrittsformular"
+
+#. Default: OpenMusicContest.org links
+#: omcevmembership/templates/home.pt:31
+msgid "omc-org-links-headline"
+msgstr "Links zum OpenMusicContest.org"
+
+#. Default: Open Music Contest Website
+#: omcevmembership/templates/home.pt:34
+msgid "omc-site-link"
+msgstr "OpenMusicContest.org"
+
+#. Default: 4 OMC Samplers
+#: omcevmembership/templates/home.pt:38
+msgid "omc-samplers-link"
+msgstr "4 OMC Sampler"
+
+#. Default: Contact Form
+#: omcevmembership/templates/home.pt:42
+msgid "omc-contact-form-link"
+msgstr "OMC Kontaktformular"
+
+#. Default: IRC Channel
+#: omcevmembership/templates/home.pt:46
+msgid "omc-irc-link"
+msgstr "OMC im IRC"
+
 #. Default: Membership Form
-#: omcevmembership/templates/join.pt:10
+#: omcevmembership/templates/join.pt:9
 msgid "membership-form"
 msgstr "Beitrittserklärung"
 
@@ -29,7 +81,7 @@ msgstr "Beitrittserklärung"
 #. from
 #. your bank account in an automatized way, add information about your bank
 #. account. Then print the document and sign it and finally mail it back to us.
-#: omcevmembership/templates/join.pt:14
+#: omcevmembership/templates/join.pt:12
 msgid "join-form-intro"
 msgstr "Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann bitte ausdrucken, unterschreiben und an uns zurücksenden."
 

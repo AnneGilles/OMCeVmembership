@@ -14,33 +14,37 @@
     <div id="bottom">
       <div class="bottom">
         <div id="left" class="align-right">
-          <h2 >Become a member</h2>
+          <h2 i18n:translate="become-a-member">Become a member</h2>
           <ul class="links">
             <li>
-              <a href="#">General Information</a>
+              <a href="#" i18n:translate="general-information-link">General Information</a>
             </li>
             <li>
-              <a href="#">Membership Options</a>
+              <a href="#" i18n:translate="membership-options-link">Membership Options</a>
             </li>
             <li>
-              <a href="${request.route_url('beitrittserklaerung')}">Join</a>
+              <a href="${request.route_url('beitrittserklaerung')}" i18n:translate="join-link">Join</a>
             </li>
           </ul>
         </div>
         <div id="right" class="align-left">
-          <h2>OpenMusicContest.org links</h2>
+          <h2 i18n:translate="omc-org-links-headline">OpenMusicContest.org links</h2>
           <ul class="links">
             <li>
-              <a href="http://www.OpenMusicContest.org">Open Music Contest Website</a>
+              <a href="http://www.OpenMusicContest.org" 
+		 i18n:translate="omc-site-link">Open Music Contest Website</a>
             </li>
             <li>
-              <a href="http://www.OpenMusicContest.org/sampler">4 OMC Samplers</a>
+              <a href="http://www.OpenMusicContest.org/sampler"
+		 i18n:translate="omc-samplers-link">4 OMC Samplers</a>
             </li>
             <li>
-              <a href="http://www.OpenMusicContest.org/contact-info">Contact Form</a>
+              <a href="http://www.OpenMusicContest.org/contact-info" 
+		 i18n:translate="omc-contact-form-link">Contact Form</a>
             </li>
             <li>
-              <a href="irc://irc.freenode.net#OpenMusicContest.org">IRC Channel</a>
+              <a href="irc://irc.freenode.net#OpenMusicContest.org"
+		 i18n:translate="omc-irc-link">IRC Channel</a>
             </li>
           </ul>
         </div>
