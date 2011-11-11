@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" 
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="base"
+      i18n:domain="OMCeVmembership">
+  <tal:block metal:fill-slot="middle">
+    <p class="app-welcome" i18n:translate="app-welcome">
+      Welcome to the OpenMusicContest.org e.V. Membership app.<br />
+      We'd love to have <emph><strong>you</strong></emph> as one of our members!
+    </p>    
+  </tal:block>
+  <tal:block metal:fill-slot="bottom">
+    <div id="bottom">
+      <div class="bottom">
+        <div id="left" class="align-right">
+          <h2 >Become a member</h2>
+          <ul class="links">
+            <li>
+              <a href="#">General Information</a>
+            </li>
+            <li>
+              <a href="#">Membership Options</a>
+            </li>
+            <li>
+              <a href="${request.route_url('beitrittserklaerung')}">Join</a>
+            </li>
+          </ul>
+        </div>
+        <div id="right" class="align-left">
+          <h2>OpenMusicContest.org links</h2>
+          <ul class="links">
+            <li>
+              <a href="http://www.OpenMusicContest.org">Open Music Contest Website</a>
+            </li>
+            <li>
+              <a href="http://www.OpenMusicContest.org/sampler">4 OMC Samplers</a>
+            </li>
+            <li>
+              <a href="http://www.OpenMusicContest.org/contact-info">Contact Form</a>
+            </li>
+            <li>
+              <a href="irc://irc.freenode.net#OpenMusicContest.org">IRC Channel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </tal:block>
+</html>

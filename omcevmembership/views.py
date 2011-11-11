@@ -18,6 +18,13 @@ def my_view(request):
     root = dbsession.query(MyModel).filter(MyModel.name==u'root').first()
     return {'root':root, 'project':'OMCeVmembership'}
 
+def home_view(request):
+    """
+    front page view,
+    display a template with links
+    """
+    return {'project':'OMCeVmembership'}
+
 
 class MembershipSchema(formencode.Schema):
     """

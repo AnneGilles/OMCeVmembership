@@ -16,9 +16,9 @@ def main(global_config, **settings):
                           'pyramid.events.BeforeRender')
 
     config.add_route('home', '/')
-    config.add_view('omcevmembership.views.my_view',
+    config.add_view('omcevmembership.views.home_view',
                     route_name='home',
-                    renderer='templates/mytemplate.pt')
+                    renderer='templates/home.pt')
     # beitrittserklaerung
     config.add_route('beitrittserklaerung', '/beitrittserklaerung')
     config.add_view('omcevmembership.views.join_membership',
