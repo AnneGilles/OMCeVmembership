@@ -11,7 +11,7 @@
     </p>    
   </tal:block>
   <tal:block metal:fill-slot="bottom">
-    <h2 i18n:translate="membership-typed-heading">Membership Types</h2>
+    <h2 i18n:translate="membership-types-heading">Membership Types</h2>
     <p i18n:translate="membership-types-explained">
       We offer two types of membership. 
     </p>

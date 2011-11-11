@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-11-11 13:28+0100\n"
+"POT-Creation-Date: 2011-11-11 15:04+0100\n"
 "PO-Revision-Date: 2011-11-09 14:28+0100\n"
 "Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -20,7 +20,10 @@ msgstr ""
 
 #. Default: Welcome to the OpenMusicContest.org e.V. Membership app.<dynamic
 #. element> We'd love to have <dynamic element> as one of our members!
+#. Default: Why we need your support.
 #: omcevmembership/templates/home.pt:8
+#: omcevmembership/templates/membership_types.pt:8
+#: omcevmembership/templates/why.pt:8
 msgid "app-welcome"
 msgstr ""
 
@@ -29,20 +32,23 @@ msgstr ""
 msgid "become-a-member"
 msgstr ""
 
-#. Default: General Information
+#. Default: Why?
 #: omcevmembership/templates/home.pt:20
+#: omcevmembership/templates/membership_types.pt:34
 msgid "general-information-link"
 msgstr ""
 
 #. Default: Membership Options
-#: omcevmembership/templates/home.pt:23
+#: omcevmembership/templates/home.pt:23 omcevmembership/templates/why.pt:53
 #, fuzzy
-#| msgid "membership-form"
 msgid "membership-options-link"
 msgstr "Membership Form"
 
 #. Default: Join
+#. Default: Join!
 #: omcevmembership/templates/home.pt:26
+#: omcevmembership/templates/membership_types.pt:37
+#: omcevmembership/templates/why.pt:56
 msgid "join-link"
 msgstr ""
 
@@ -90,4 +96,84 @@ msgstr ""
 "from your bank account in an automatized way, add information about your "
 "bank account. Then print the document and sign it and finally mail it "
 "back to us."
+
+#. Default: Membership Types
+#: omcevmembership/templates/membership_types.pt:14
+#, fuzzy
+#| msgid "membership-typed-heading"
+msgid "membership-types-heading"
+msgstr "Membership Form"
+
+#. Default: We offer two types of membership.
+#: omcevmembership/templates/membership_types.pt:15
+#, fuzzy
+msgid "membership-types-explained"
+msgstr "Membership Form"
+
+#. Default: A normal member is expected to pay 23 Euros a year.
+#: omcevmembership/templates/membership_types.pt:19
+#, fuzzy
+msgid "membership-types-ordinary"
+msgstr "Membership Form"
+
+#. Default: Supporters are expected to pay 42 Euros.
+#: omcevmembership/templates/membership_types.pt:22
+#, fuzzy
+msgid "membership-types-supporter"
+msgstr "Membership Form"
+
+#. Default: Our society is a charity, so you can make a tax-deductible
+#. donation.
+#: omcevmembership/templates/membership_types.pt:26
+msgid "donations"
+msgstr ""
+
+#. Default: Some good reasons.
+#: omcevmembership/templates/why.pt:13
+msgid "why-headline"
+msgstr ""
+
+#. Default: A new Collecting Society
+#: omcevmembership/templates/why.pt:16
+msgid "a-new-col-soc"
+msgstr ""
+
+#. Default: We have been conducting the Open Music Contest several times, with
+#. ever
+#. growing interest from the community. Creative Commons Licenses have become a
+#. standard.
+#: omcevmembership/templates/why.pt:17
+msgid "history1"
+msgstr ""
+
+#. Default: GEMA, the one and only collecting society with regard to music in
+#. germany has been a problem and sometimes a real show-stopper. Every time you
+#. want to have a CD produced, you need their allowance. Even if the CDs
+#. contents
+#. were entirely GEMA-free.
+#: omcevmembership/templates/why.pt:24
+msgid "history2"
+msgstr ""
+
+#. Default: GEMA does not support Creative Commons Licenses. The artists
+#. registered
+#. are not free to release their music the way they want. That's not going to
+#. change.
+#: omcevmembership/templates/why.pt:32
+msgid "reason1"
+msgstr ""
+
+#. Default: Likewise, artists who do not join GEMA for whatever reasons have no
+#. way
+#. to get their share of the royalties GEMA collects.
+#: omcevmembership/templates/why.pt:36
+msgid "reason2"
+msgstr ""
+
+#. Default: We are about to set up a new collecting society. We call it C3S:
+#. Creative Commons Collecting Society. This will be a tremendous effort, so we
+#. need your support. Financial and other.
+#: omcevmembership/templates/why.pt:43
+msgid "reason3"
+msgstr ""
 

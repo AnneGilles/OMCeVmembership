@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-11-11 13:28+0100\n"
-"PO-Revision-Date: 2011-11-11 13:34+0100\n"
+"POT-Creation-Date: 2011-11-11 15:04+0100\n"
+"PO-Revision-Date: 2011-11-11 15:05+0100\n"
 "Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -20,7 +20,10 @@ msgstr ""
 
 #. Default: Welcome to the OpenMusicContest.org e.V. Membership app.<dynamic
 #. element> We'd love to have <dynamic element> as one of our members!
+#. Default: Why we need your support.
 #: omcevmembership/templates/home.pt:8
+#: omcevmembership/templates/membership_types.pt:8
+#: omcevmembership/templates/why.pt:8
 msgid "app-welcome"
 msgstr "Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic element> Wir würden uns über Dich als neues Mitglied freuen!"
 
@@ -29,19 +32,23 @@ msgstr "Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic el
 msgid "become-a-member"
 msgstr "Werde Mitglied"
 
-#. Default: General Information
+#. Default: Why?
 #: omcevmembership/templates/home.pt:20
+#: omcevmembership/templates/membership_types.pt:34
 msgid "general-information-link"
 msgstr "Allgemeine Informationen"
 
 #. Default: Membership Options
 #: omcevmembership/templates/home.pt:23
-#| msgid "membership-form"
+#: omcevmembership/templates/why.pt:53
 msgid "membership-options-link"
 msgstr "Welche Mitgliedschaft?"
 
 #. Default: Join
+#. Default: Join!
 #: omcevmembership/templates/home.pt:26
+#: omcevmembership/templates/membership_types.pt:37
+#: omcevmembership/templates/why.pt:56
 msgid "join-link"
 msgstr "Zum Beitrittsformular"
 
@@ -84,4 +91,81 @@ msgstr "Beitrittserklärung"
 #: omcevmembership/templates/join.pt:12
 msgid "join-form-intro"
 msgstr "Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann bitte ausdrucken, unterschreiben und an uns zurücksenden."
+
+#. Default: Membership Types
+#: omcevmembership/templates/membership_types.pt:14
+#, fuzzy
+#| msgid "membership-typed-heading"
+msgid "membership-types-heading"
+msgstr "Welche Mitgliedschaft?"
+
+#. Default: We offer two types of membership.
+#: omcevmembership/templates/membership_types.pt:15
+msgid "membership-types-explained"
+msgstr "Es gibt zwei Arten der Mitgliedschaft."
+
+#. Default: A normal member is expected to pay 23 Euros a year.
+#: omcevmembership/templates/membership_types.pt:19
+msgid "membership-types-ordinary"
+msgstr "Ein ordentliches Mitglied bezahlt 23 Euro pro Jahr."
+
+#. Default: Supporters are expected to pay 42 Euros.
+#: omcevmembership/templates/membership_types.pt:22
+msgid "membership-types-supporter"
+msgstr "Unterstützungsmitglieder bezahlen 42 Euro pro Jahr."
+
+#. Default: Our society is a charity, so you can make a tax-deductible
+#. donation.
+#: omcevmembership/templates/membership_types.pt:26
+msgid "donations"
+msgstr "Unser Verein ist als gemeinnützig eingetragen. Spenden können von der Steuer abgesetzt werden."
+
+#. Default: Some good reasons.
+#: omcevmembership/templates/why.pt:13
+msgid "why-headline"
+msgstr "Ein paar gute Gründe."
+
+#. Default: A new Collecting Society
+#: omcevmembership/templates/why.pt:16
+msgid "a-new-col-soc"
+msgstr "Eine neue Verwertungsgesellschaft"
+
+#. Default: We have been conducting the Open Music Contest several times, with
+#. ever
+#. growing interest from the community. Creative Commons Licenses have become a
+#. standard.
+#: omcevmembership/templates/why.pt:17
+msgid "history1"
+msgstr "Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils steigendem Interesse der Community. Creative Commons-Lizenzen haben sich als Standard etabliert."
+
+#. Default: GEMA, the one and only collecting society with regard to music in
+#. germany has been a problem and sometimes a real show-stopper. Every time you
+#. want to have a CD produced, you need their allowance. Even if the CDs
+#. contents
+#. were entirely GEMA-free.
+#: omcevmembership/templates/why.pt:24
+msgid "history2"
+msgstr "Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in Deutschland, hat dabei oftmals für Probleme gesorgt und hätte die Projekte teilweise fast scheitern lassen. Jede Pressung von CDs beim Presswerk erfordert eine Freigabe durch die GEMA. Auch wenn die Inhalte völlig GEMA-frei waren."
+
+#. Default: GEMA does not support Creative Commons Licenses. The artists
+#. registered
+#. are not free to release their music the way they want. That's not going to
+#. change.
+#: omcevmembership/templates/why.pt:32
+msgid "reason1"
+msgstr "Die GEMA erlaubt ihren Mitgliedern nicht die Lizensierung und Abgabe einzelner Stücke unter Creative Commons-Lizenzen. Künstler haben nicht die Freiheit, mit ihrer Musik zu tun was sie wünschen. Das wird sich nicht verändern."
+
+#. Default: Likewise, artists who do not join GEMA for whatever reasons have no
+#. way
+#. to get their share of the royalties GEMA collects.
+#: omcevmembership/templates/why.pt:36
+msgid "reason2"
+msgstr "Ebenfalls können Künstler, die aus irgend welchen Gründen nicht der GEMA beitreten, nicht an der Ausschüttung der Tantiemen teilhaben, die die GEMA pauschal für alle gespielte Musik einsammelt."
+
+#. Default: We are about to set up a new collecting society. We call it C3S:
+#. Creative Commons Collecting Society. This will be a tremendous effort, so we
+#. need your support. Financial and other.
+#: omcevmembership/templates/why.pt:43
+msgid "reason3"
+msgstr "Wir betreiben die Gründung einer neuen Verwertungsgesellschaft und nennen sie C3S: Creative Commons Collecting Society. Das Projekt ist mit großem Aufwand verbunden, weshalb wir Unterstützung brauchen, finanziell und auf andere Arten."
 
