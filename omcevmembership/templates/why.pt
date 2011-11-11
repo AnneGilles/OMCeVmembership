@@ -22,21 +22,25 @@
       &nbsp;
     </p>
     <p i18n:translate="history2">
-      GEMA, the one and only collecting society with regard to music has been a problem and 
+      GEMA, the one and only collecting society with regard to music in germany has been a problem and 
       sometimes a real show-stopper. Every time you want to have a CD produced, you need their 
       allowance. Even if the CDs contents were entirely GEMA-free.
     </p>    
     <p>
       &nbsp;
     </p>
-    <p i18n:translate="history3">
+    <p i18n:translate="reason1">
       GEMA does not support Creative Commons Licenses. The artists registered are not free to 
-      release their music the way they want. That's not going to change.
+      release their music the way they want. That's not going to change. 
+    </p>
+    <p i18n:translate="reason2">
+      Likewise, artists who do not join GEMA for whatever reasons have no way 
+      to get their share of the royalties GEMA collects. 
     </p>
     <p>
       &nbsp;
     </p>
-    <p i18n:translate="history4">
+    <p i18n:translate="reason3">
       We are about to set up a new collecting society. 
       We call it C3S: Creative Commons Collecting Society.
       This will be a tremendous effort, so we need your support. Financial and other.
