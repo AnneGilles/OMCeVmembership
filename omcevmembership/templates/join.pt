@@ -2,104 +2,101 @@
       xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
-      metal:use-macro="base">
-
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n" 
+      metal:use-macro="base"
+      i18n:domain="OMCeVmembership">
   <tal:block metal:fill-slot="middle">
-    <h1>Membership Form</h1>
+    <h1 i18n:translate="membership-form">Membership Form</h1>
   </tal:block>
-
   <tal:block metal:fill-slot="bottom">
-  ${form.begin(request.route_url('beitrittserklaerung'))}
-  <fieldset>
-    <table>
-      <tr><!-- type -->
-	<td>
-	  ${form.label('membership_type', 'Membership Type:')}
-	</td>
-	<td>
-	  ${form.select('membership_type', [u'supporter: 42 Euro', u'ordinary: 23 Euro'], selected_value='ordinary: 23 Euro')}
-	</td>
-	<td>
-	  ${form.errorlist('membership_type')}
-	</td>
-      </tr>
-      <tr><!-- name -->
-	<td>
-	  ${form.label('lastname', 'Lastname:')}
-	</td>
-	<td>
-	  ${form.text('lastname')}
-	</td>
-	<td>
-	  ${form.errorlist('lastname')}
-	</td>
-      </tr>
-      <tr><!-- vorname -->
-	<td>
-	  ${form.label('surname', 'Surname:')}
-	</td>
-	<td>
-	  ${form.text('surname')}
-	</td>
-	<td>
-	  ${form.errorlist('surname')}
-	</td>
-      </tr>
-      <tr><!-- strasse -->
-	<td>
-          ${form.label('address1', 'Street / No.:')}
-	</td>
-	<td>
-          ${form.text('address1')}
-	</td>
-	<td>
-          ${form.errorlist('address1')}
-	</td>
-      </tr>
-      <tr><!-- plz/ort -->
-	<td>
-          ${form.label('address2', 'Post Code / City:')}
-	</td>
-	<td>
-          ${form.text('address2')}
-	</td>
-	<td>
-          ${form.errorlist('address2')}
-	</td>
-      </tr>
-      <tr><!-- telefon -->
-	<td>
-          ${form.label('phone', 'Phone:')}
-	</td>
-	<td>
-          ${form.text('phone')}
-	</td>
-	<td>
-          ${form.errorlist('phone')}
-	</td>
-      </tr>
-      <tr><!-- email -->
-	<td>
-          ${form.label('email', 'Email:')}
-	</td>
-	<td>
-          ${form.text('email')}
-	</td>
-	<td>
-          ${form.errorlist('email')}
-	</td>
-      </tr>
-      <tr>
-	<td>
-	</td>
-	<td>
-          ${form.submit('form.submitted', 'Register', class_='submit')}
-	</td>
-	<td>
-	</td>
-      </tr>
-    </table>
-  </fieldset>
-  ${form.end()}
+    <p i18n:translate="join-form-intro">
+      Please fill out this form and submit it. You will get a PDF document with your information in it.
+      If you want us to retract your membership fee from your bank account in an automatized way, 
+      add information about your bank account. Then print the document and sign it and finally mail it back to us.
+    </p>
+    <p>
+      &nbsp;
+    </p>
+    ${form.begin(request.route_url('beitrittserklaerung'))}
+    <fieldset>
+      <table>
+	<tr><!-- name -->
+	  <td>
+	    ${form.label('lastname', 'Lastname:')}
+	  </td>
+	  <td>
+	    ${form.text('lastname')}
+	  </td>
+	  <td>
+	    ${form.errorlist('lastname')}
+	  </td>
+	</tr>
+	<tr><!-- vorname -->
+	  <td>
+	    ${form.label('surname', 'Surname:')}
+	  </td>
+	  <td>
+	    ${form.text('surname')}
+	  </td>
+	  <td>
+	    ${form.errorlist('surname')}
+	  </td>
+	</tr>
+	<tr><!-- strasse -->
+	  <td>
+	    ${form.label('address1', 'Street / No.:')}
+	  </td>
+	  <td>
+	    ${form.text('address1')}
+	  </td>
+	  <td>
+	    ${form.errorlist('address1')}
+	  </td>
+	</tr>
+	<tr><!-- plz/ort -->
+	  <td>
+	    ${form.label('address2', 'Post Code / City:')}
+	  </td>
+	  <td>
+	    ${form.text('address2')}
+	  </td>
+	  <td>
+	    ${form.errorlist('address2')}
+	  </td>
+	</tr>
+	<tr><!-- telefon -->
+	  <td>
+	    ${form.label('phone', 'Phone:')}
+	  </td>
+	  <td>
+	    ${form.text('phone')}
+	  </td>
+	  <td>
+	    ${form.errorlist('phone')}
+	  </td>
+	</tr>
+	<tr><!-- email -->
+	  <td>
+	    ${form.label('email', 'Email:')}
+	  </td>
+	  <td>
+	    ${form.text('email')}
+	  </td>
+	  <td>
+	    ${form.errorlist('email')}
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	  </td>
+	  <td>
+	    ${form.submit('form.submitted', 'Register', class_='submit')}
+	  </td>
+	  <td>
+	  </td>
+	</tr>
+      </table>
+    </fieldset>
+    ${form.end()}
   </tal:block>
 </html>
