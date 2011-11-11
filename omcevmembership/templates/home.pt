@@ -17,10 +17,10 @@
           <h2 i18n:translate="become-a-member">Become a member</h2>
           <ul class="links">
             <li>
-              <a href="#" i18n:translate="general-information-link">General Information</a>
+              <a href="${request.route_url('why')}" i18n:translate="general-information-link">Why?</a>
             </li>
             <li>
-              <a href="#" i18n:translate="membership-options-link">Membership Options</a>
+              <a href="${request.route_url('types')}" i18n:translate="membership-options-link">Membership Options</a>
             </li>
             <li>
               <a href="${request.route_url('beitrittserklaerung')}" i18n:translate="join-link">Join</a>

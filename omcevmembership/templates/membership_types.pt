@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" 
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="base"
+      i18n:domain="OMCeVmembership">
+  <tal:block metal:fill-slot="middle">
+    <p class="app-welcome" i18n:translate="app-welcome">
+      Welcome to the OpenMusicContest.org e.V. Membership app.<br />
+      We'd love to have <emph><strong>you</strong></emph> as one of our members!
+    </p>    
+  </tal:block>
+  <tal:block metal:fill-slot="bottom">
+    <h2 i18n:translate="membership-typed-heading">Membership Types</h2>
+    <p i18n:translate="membership-types-explained">
+      We offer two types of membership. 
+    </p>
+    <ul>
+      <li i18n:translate="membership-types-ordinary">
+	A normal member is expected to pay 23 Euros a year. 
+      </li>
+      <li i18n:translate="membership-types-supporter">
+	Supporters are expected to pay 42 Euros.
+      </li>
+    </ul>
+    <p i18n:translate="donations">
+      Our society is a charity, so you can make a tax-deductible donation.
+    </p>
+    <p>
+      &nbsp;
+    </p>
+    <ul class="links">
+      <li>
+        <a href="${request.route_url('why')}" i18n:translate="general-information-link">Why?</a>
+      </li>
+      <li>
+        <a href="${request.route_url('beitrittserklaerung')}" i18n:translate="join-link">Join!</a>
+      </li>
+    </ul>
+  </tal:block>
+</html>

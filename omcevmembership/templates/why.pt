@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" 
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="base"
+      i18n:domain="OMCeVmembership">
+  <tal:block metal:fill-slot="middle">
+    <p class="app-welcome" i18n:translate="app-welcome">
+      Why we need your support.
+    </p>    
+  </tal:block>
+  <tal:block metal:fill-slot="middle">
+    <h2 i18n:translate="why-headline">Some good reasons.</h2>
+  </tal:block>
+  <tal:block metal:fill-slot="bottom">
+    <h2 i18n:translate="a-new-col-soc">A new Collecting Society</h2>
+    <p i18n:translate="history1">
+      We have been conducting the Open Music Contest several times, 
+      with ever growing interest from the community. Creative Commons Licenses have become a standard. 
+    </p>
+    <p>
+      &nbsp;
+    </p>
+    <p i18n:translate="history2">
+      GEMA, the one and only collecting society with regard to music has been a problem and 
+      sometimes a real show-stopper. Every time you want to have a CD produced, you need their 
+      allowance. Even if the CDs contents were entirely GEMA-free.
+    </p>    
+    <p>
+      &nbsp;
+    </p>
+    <p i18n:translate="history3">
+      GEMA does not support Creative Commons Licenses. The artists registered are not free to 
+      release their music the way they want. That's not going to change.
+    </p>
+    <p>
+      &nbsp;
+    </p>
+    <p i18n:translate="history4">
+      We are about to set up a new collecting society. 
+      We call it C3S: Creative Commons Collecting Society.
+      This will be a tremendous effort, so we need your support. Financial and other.
+    </p>
+    <p>
+      &nbsp;
+    </p>
+    <ul class="links">
+      <li>
+        <a href="${request.route_url('types')}" i18n:translate="membership-options-link">Membership Options</a>
+      </li>
+      <li>
+        <a href="${request.route_url('beitrittserklaerung')}" i18n:translate="join-link">Join</a>
+      </li>
+    </ul>
+  </tal:block>
+</html>

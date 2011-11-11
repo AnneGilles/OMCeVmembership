@@ -14,11 +14,22 @@ def main(global_config, **settings):
 
     config.add_subscriber('omcevmembership.subscribers.add_base_template',
                           'pyramid.events.BeforeRender')
-
+    # home /
     config.add_route('home', '/')
     config.add_view('omcevmembership.views.home_view',
                     route_name='home',
                     renderer='templates/home.pt')
+    # /why
+    config.add_route('why', '/why')
+    config.add_view('omcevmembership.views.why_view',
+                    route_name='why',
+                    renderer='templates/why.pt')
+    # /types
+    config.add_route('types', '/types')
+    config.add_view('omcevmembership.views.types_view',
+                    route_name='types',
+                    renderer='templates/membership_types.pt')
+
     # beitrittserklaerung
     config.add_route('beitrittserklaerung', '/beitrittserklaerung')
     config.add_view('omcevmembership.views.join_membership',

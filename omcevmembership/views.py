@@ -13,10 +13,11 @@ from pyramid.i18n import (
     get_locale_name,
     )
 
-def my_view(request):
-    dbsession = DBSession()
-    root = dbsession.query(MyModel).filter(MyModel.name==u'root').first()
-    return {'root':root, 'project':'OMCeVmembership'}
+def why_view(request):
+    return {'project':'OMCeVmembership'}
+
+def types_view(request):
+    return {'project':'OMCeVmembership'}
 
 def home_view(request):
     """
