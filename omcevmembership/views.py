@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from omcevmembership.models import DBSession
 from omcevmembership.models import MyModel
 
@@ -41,27 +43,23 @@ class Membership(colander.MappingSchema):
     """
     colander schema for membership application form
     """
-    lastname = colander.SchemaNode(colander.String())
-    #,
-    # validator=colander.PlainText(not_empty = True)
-    surname  = colander.SchemaNode(colander.String())
-    lastname = colander.SchemaNode(colander.String())
-    address1 = colander.SchemaNode(colander.String())
-    address2 = colander.SchemaNode(colander.String())
-    email =  colander.SchemaNode(colander.String())
+    lastname  = colander.SchemaNode(colander.String(),
+                                   title = _(u"Lastname"))
+    surname = colander.SchemaNode(colander.String(),
+                                   title = _(u'Surname'))
+    address1 = colander.SchemaNode(colander.String(),
+                                   title = _(u'Street & No.'))
+    address2 = colander.SchemaNode(colander.String(),
+                                   title = _(u'Post Code & City'))
+    email =  colander.SchemaNode(colander.String(),
+                                 title = _(u'Email Address'),
+                                 validator = colander.Email())
     phone =  colander.SchemaNode(colander.String())
     country = colander.SchemaNode(
         colander.String(),
         widget = deform.widget.SelectWidget(values=constants.country_codes()),
         )
     #formencode.validators.String(not_empty = True)
-
-def validate_email(address):
-    try:
-        valid = formencode.validators.Email(not_empty=True).to_python(address)
-        return True
-    except Exception as message:
-        return unicode(message)
 
 def join_membership(request):
 
