@@ -14,7 +14,7 @@ requires = [
     'pyramid_tm',
     'pyramid_debugtoolbar',
     'zope.sqlalchemy',
-    'pyramid_simpleform',
+    'deform',
     'fdfgen',
     'Babel',
     'lingua',
