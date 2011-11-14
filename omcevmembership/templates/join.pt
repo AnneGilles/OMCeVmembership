@@ -7,8 +7,8 @@
       i18n:domain="OMCeVmembership">
   <tal:block metal:fill-slot="deform-js-css">
     <link rel="stylesheet" href="${request.static_url('omcevmembership:static/deform/form.css')}" type="text/css" media="screen" charset="utf-8" />
-    <script type="text/javascript" src="/static/scripts/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="/static/scripts/deform.js"></script>
+    <script type="text/javascript" src="/static/deform/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/static/deform/deform.js"></script>
   </tal:block>
   <tal:block metal:fill-slot="middle">
     <h1 i18n:translate="membership-form">Membership Form</h1>
@@ -22,9 +22,10 @@
     <p>
       &nbsp;
     </p>
-    <span tal:replace="structure form"/>
+    <span i18n:translate="" tal:replace="structure form"/>
   </tal:block>
   <tal:block metal:fill-slot="deform-load">
+    <!-- loading deform --> 
     <script type="text/javascript">deform.load()</script>
   </tal:block>
 </html>

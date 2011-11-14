@@ -37,5 +37,6 @@
   <div id="footer">
     <div class="footer">&copy; Copyright 2011, OpenMusicContest.org e.V.</div>
   </div>
+	<tal:block metal:define-slot="deform-load"></tal:block>
 </body>
 </html>
