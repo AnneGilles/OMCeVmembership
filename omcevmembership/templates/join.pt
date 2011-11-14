@@ -22,7 +22,7 @@
     <p>
       &nbsp;
     </p>
-    <span i18n:translate="" tal:replace="structure form"/>
+    <div id="form" tal:replace="structure form"/>
   </tal:block>
   <tal:block metal:fill-slot="deform-load">
     <!-- loading deform --> 

@@ -8,7 +8,8 @@ from deform import Form
 from deform import ValidationFailure
 #import formencode
 
-from translationstring import TranslationStringFactory
+#from translationstring import TranslationStringFactory
+from pyramid.i18n import TranslationStringFactory
 _ = TranslationStringFactory('OMCeVmembership')
 
 from fdfgen import forge_fdf
@@ -77,9 +78,10 @@ def join_membership(request):
     if 'submit' in request.POST:
         controls = request.POST.items()
         try:
-            form.validate(controls)
+            appstruct = form.validate(controls)
 
             print "the controls: " + str(controls)
+            print "the appstruct: " + str(appstruct)
         except ValidationFailure, e:
             return{'form': e.render()}
         return {'form':'OK'}
