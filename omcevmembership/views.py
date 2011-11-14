@@ -6,7 +6,7 @@ from omcevmembership.models import MyModel
 import deform
 from deform import Form
 from deform import ValidationFailure
-import formencode
+#import formencode
 
 from translationstring import TranslationStringFactory
 _ = TranslationStringFactory('OMCeVmembership')
@@ -22,7 +22,6 @@ from pyramid.i18n import (
 DEBUG = True
 
 
-
 def why_view(request):
     return {'project':'OMCeVmembership'}
 
@@ -36,43 +35,51 @@ def home_view(request):
     """
     return {'project':'OMCeVmembership'}
 
+from pyramid.threadlocal import get_current_request
 
 import colander
 from webhelpers import constants
-class Membership(colander.MappingSchema):
-    """
-    colander schema for membership application form
-    """
-    lastname  = colander.SchemaNode(colander.String(),
-                                   title = _(u"Lastname"))
-    surname = colander.SchemaNode(colander.String(),
-                                   title = _(u'Surname'))
-    address1 = colander.SchemaNode(colander.String(),
-                                   title = _(u'Street & No.'))
-    address2 = colander.SchemaNode(colander.String(),
-                                   title = _(u'Post Code & City'))
-    email =  colander.SchemaNode(colander.String(),
-                                 title = _(u'Email Address'),
-                                 validator = colander.Email())
-    phone =  colander.SchemaNode(colander.String())
-    country = colander.SchemaNode(
-        colander.String(),
-        widget = deform.widget.SelectWidget(values=constants.country_codes()),
-        )
-    #formencode.validators.String(not_empty = True)
-
+    
 def join_membership(request):
 
-    locale = get_localizer(request)
-    #if DEBUG: print "-- locale: " + str(locale)
+    locale_name = get_locale_name(request)
+    _ = TranslationStringFactory('OMCeVmembership') 
+    if DEBUG: print "-- locale_name: " + str(locale_name)
+
+
+    class Membership(colander.MappingSchema):
+        """
+        colander schema for membership application form
+        """
+        lastname  = colander.SchemaNode(colander.String(),title=_(u"Lastname"))
+        surname = colander.SchemaNode(colander.String(),title=_(u'Surname'))
+        address1 = colander.SchemaNode(colander.String(),title=_(u'Street & No.'))
+        address2 = colander.SchemaNode(colander.String(),title=_(u'Post Code & City'))
+        email =  colander.SchemaNode(colander.String(),
+                                     title = _(u'Email Address'),
+                                     validator = colander.Email())
+        phone =  colander.SchemaNode(colander.String(), title=_(u'Phone'))
+        country = colander.SchemaNode(colander.String(),
+                                      widget = deform.widget.SelectWidget(values=constants.country_codes()),)
+        _LOCALE_ = colander.SchemaNode(colander.String(),
+                                       widget = deform.widget.HiddenWidget(),
+                                       default=locale_name)
+        #print "locale_name: " + str(locale_name)
+
 
     schema = Membership()
-    form = deform.Form(schema, buttons=('submit',))
+    form = deform.Form(schema,
+                       #buttons=(_('Submit'),), use_ajax=True)
+                       buttons=[deform.Button('submit', _('Submit'))],
+                       #use_ajax=True
+                       )
 
     if 'submit' in request.POST:
         controls = request.POST.items()
         try:
             form.validate(controls)
+
+            print "the controls: " + str(controls)
         except ValidationFailure, e:
             return{'form': e.render()}
         return {'form':'OK'}
