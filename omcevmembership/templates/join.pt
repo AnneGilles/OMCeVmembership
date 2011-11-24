@@ -23,9 +23,12 @@
       &nbsp;
     </p>
     <span i18n:translate="" tal:replace="structure form"/>
+    <strong tal:repeat="message request.session.pop_flash()">
+      ${message}
+    </strong>
   </tal:block>
   <tal:block metal:fill-slot="deform-load">
-    <!-- loading deform --> 
+    <!--! loading deform --> 
     <script type="text/javascript">deform.load()</script>
   </tal:block>
 </html>
