@@ -3,6 +3,14 @@ from sqlalchemy import engine_from_config
 
 from omcevmembership.models import initialize_sql
 
+from pyramid.i18n import get_localizer
+from pyramid.i18n import get_locale_name
+from translationstring import TranslationStringFactory
+
+_ = TranslationStringFactory('deform')
+def translator(term):
+    return get_localizer(get_current_request()).translate(term)
+
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
