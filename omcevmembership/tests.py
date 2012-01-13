@@ -19,5 +19,5 @@ class TestMyView(unittest.TestCase):
     def test_it(self):
         from omcevmembership.views import home_view
         request = testing.DummyRequest()
-        info = my_view(request)
+        info = home_view(request)
         self.assertEqual(info['project'], 'OMCeVmembership')
