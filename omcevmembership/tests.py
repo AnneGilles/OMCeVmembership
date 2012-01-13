@@ -17,8 +17,7 @@ class TestMyView(unittest.TestCase):
         testing.tearDown()
 
     def test_it(self):
-        from omcevmembership.views import my_view
+        from omcevmembership.views import home_view
         request = testing.DummyRequest()
         info = my_view(request)
-        self.assertEqual(info['root'].name, 'root')
         self.assertEqual(info['project'], 'OMCeVmembership')
