@@ -13,8 +13,10 @@ requires = [
     'transaction',
     'pyramid_tm',
     'pyramid_debugtoolbar',
+    'pyramid_beaker',
     'zope.sqlalchemy',
     'deform',
+    'webhelpers',
     'fdfgen',
     'Babel',
     'lingua',
@@ -24,7 +26,7 @@ if sys.version_info[:3] < (2,5,0):
     requires.append('pysqlite')
 
 setup(name='OMCeVmembership',
-      version='0.0',
+      version='0.1',
       description='OMCeVmembership',
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[
