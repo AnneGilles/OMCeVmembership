@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-11-14 11:15+0100\n"
+"POT-Creation-Date: 2012-01-14 02:43+0100\n"
 "PO-Revision-Date: 2011-11-14 11:16+0100\n"
 "Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: omcevmembership/views.py:54
+#: omcevmembership/views.py:91
 msgid "Lastname"
 msgstr "Nachname"
 
-#: omcevmembership/views.py:55
+#: omcevmembership/views.py:92
 msgid "Surname"
 msgstr "Vorname"
 
-#: omcevmembership/views.py:56
+#: omcevmembership/views.py:93
 msgid "Street & No."
 msgstr "Straße & Nummer"
 
-#: omcevmembership/views.py:57
+#: omcevmembership/views.py:94
 msgid "Post Code & City"
 msgstr "PLZ & Ort"
 
-#: omcevmembership/views.py:59
+#: omcevmembership/views.py:96
 msgid "Email Address"
 msgstr "Email-Adresse"
 
-#: omcevmembership/views.py:61
+#: omcevmembership/views.py:98
 msgid "Phone"
 msgstr "Telefon"
 
-#: omcevmembership/views.py:73
+#: omcevmembership/views.py:110
 msgid "Submit"
 msgstr "Beitrittsformular zum Ausdrucken erstellen (PDF, 81KB)"
 
@@ -53,7 +53,9 @@ msgstr "Beitrittsformular zum Ausdrucken erstellen (PDF, 81KB)"
 #: omcevmembership/templates/membership_types.pt:8
 #: omcevmembership/templates/why.pt:8
 msgid "app-welcome"
-msgstr "Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic element> Wir würden uns über Dich als neues Mitglied freuen!"
+msgstr ""
+"Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic "
+"element> Wir würden uns über Dich als neues Mitglied freuen!"
 
 #. Default: Become a member
 #: omcevmembership/templates/home.pt:17
@@ -67,8 +69,7 @@ msgid "general-information-link"
 msgstr "Warum?"
 
 #. Default: Membership Options
-#: omcevmembership/templates/home.pt:23
-#: omcevmembership/templates/why.pt:53
+#: omcevmembership/templates/home.pt:23 omcevmembership/templates/why.pt:53
 msgid "membership-options-link"
 msgstr "Welche Mitgliedschaft?"
 
@@ -105,10 +106,46 @@ msgstr "OMC Kontaktformular"
 msgid "omc-irc-link"
 msgstr "OMC im IRC"
 
+#. Default: Ideas for the Future
 #. Default: Membership Form
-#: omcevmembership/templates/join.pt:14
+#: omcevmembership/templates/ideas.pt:9 omcevmembership/templates/join.pt:14
 msgid "membership-form"
 msgstr "Beitrittserklärung"
+
+#. Default: The Commercial Aspect of Non-Commercial Licenses
+#: omcevmembership/templates/ideas.pt:12
+msgid "nc-commercial-heading"
+msgstr ""
+
+#. Default: When you are releasing a thing under a Creative Commons license
+#. including the NC feature (shorthand for non-commercial), you are giving it
+#. away
+#. for free for so-called non-commercial use. It may not be used commercially.
+#. At
+#. least not without your permission.
+#: omcevmembership/templates/ideas.pt:13
+msgid "nc-commercial-text-1"
+msgstr ""
+
+#. Default: So there is a commercial aspect of NC licenses. Licensees indending
+#. to
+#. use your work must talk to you and have your permission. We will offer this
+#. functionality through our service, as a one-stop shop for all institutions
+#. or
+#. companies searching for content.
+#: omcevmembership/templates/ideas.pt:19
+msgid "nc-commercial-text-2"
+msgstr ""
+
+#. Default: Imagine you could set a fee for your work to be used, maybe
+#. depending
+#. on that institutions type or a companies size. Licensees would be able to
+#. see
+#. how much it would be for them to use it, possibly preview your work and then
+#. license it.
+#: omcevmembership/templates/ideas.pt:25
+msgid "nc-commercial-text-3"
+msgstr ""
 
 #. Default: Please fill out this form and submit it. You will get a PDF
 #. document
@@ -118,7 +155,11 @@ msgstr "Beitrittserklärung"
 #. account. Then print the document and sign it and finally mail it back to us.
 #: omcevmembership/templates/join.pt:17
 msgid "join-form-intro"
-msgstr "Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann bitte ausdrucken, unterschreiben und an uns zurücksenden."
+msgstr ""
+"Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument "
+"erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten"
+" Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann "
+"bitte ausdrucken, unterschreiben und an uns zurücksenden."
 
 #. Default: Membership Types
 #: omcevmembership/templates/membership_types.pt:14
@@ -144,7 +185,9 @@ msgstr "Unterstützungsmitglieder bezahlen 42 Euro pro Jahr."
 #. donation.
 #: omcevmembership/templates/membership_types.pt:26
 msgid "donations"
-msgstr "Unser Verein ist als gemeinnützig eingetragen. Spenden können von der Steuer abgesetzt werden."
+msgstr ""
+"Unser Verein ist als gemeinnützig eingetragen. Spenden können von der "
+"Steuer abgesetzt werden."
 
 #. Default: Some good reasons.
 #: omcevmembership/templates/why.pt:13
@@ -162,7 +205,10 @@ msgstr "Eine neue Verwertungsgesellschaft"
 #. standard.
 #: omcevmembership/templates/why.pt:17
 msgid "history1"
-msgstr "Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils steigendem Interesse der Community. Creative Commons-Lizenzen haben sich als Standard etabliert."
+msgstr ""
+"Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils "
+"steigendem Interesse der Community. Creative Commons-Lizenzen haben sich "
+"als Standard etabliert."
 
 #. Default: GEMA, the one and only collecting society with regard to music in
 #. germany has been a problem and sometimes a real show-stopper. Every time you
@@ -171,7 +217,12 @@ msgstr "Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils stei
 #. were entirely GEMA-free.
 #: omcevmembership/templates/why.pt:24
 msgid "history2"
-msgstr "Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in Deutschland, hat dabei oftmals für Probleme gesorgt und hätte die Projekte teilweise fast scheitern lassen. Jede Pressung von CDs beim Presswerk erfordert eine Freigabe durch die GEMA. Auch wenn die Inhalte völlig GEMA-frei waren."
+msgstr ""
+"Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in "
+"Deutschland, hat dabei oftmals für Probleme gesorgt und hätte die "
+"Projekte teilweise fast scheitern lassen. Jede Pressung von CDs beim "
+"Presswerk erfordert eine Freigabe durch die GEMA. Auch wenn die Inhalte "
+"völlig GEMA-frei waren."
 
 #. Default: GEMA does not support Creative Commons Licenses. The artists
 #. registered
@@ -179,30 +230,124 @@ msgstr "Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in 
 #. change.
 #: omcevmembership/templates/why.pt:32
 msgid "reason1"
-msgstr "Die GEMA erlaubt ihren Mitgliedern nicht die Lizensierung und Abgabe einzelner Stücke unter Creative Commons-Lizenzen. Künstler haben nicht die Freiheit, mit ihrer Musik zu tun was sie wünschen. Das wird sich nicht verändern."
+msgstr ""
+"Die GEMA erlaubt ihren Mitgliedern nicht die Lizensierung und Abgabe "
+"einzelner Stücke unter Creative Commons-Lizenzen. Künstler haben nicht "
+"die Freiheit, mit ihrer Musik zu tun was sie wünschen. Das wird sich "
+"nicht verändern."
 
 #. Default: Likewise, artists who do not join GEMA for whatever reasons have no
 #. way
 #. to get their share of the royalties GEMA collects.
 #: omcevmembership/templates/why.pt:36
 msgid "reason2"
-msgstr "Ebenfalls können Künstler, die aus irgend welchen Gründen nicht der GEMA beitreten, nicht an der Ausschüttung der Tantiemen teilhaben, die die GEMA pauschal für alle gespielte Musik einsammelt."
+msgstr ""
+"Ebenfalls können Künstler, die aus irgend welchen Gründen nicht der GEMA "
+"beitreten, nicht an der Ausschüttung der Tantiemen teilhaben, die die "
+"GEMA pauschal für alle gespielte Musik einsammelt."
 
 #. Default: We are about to set up a new collecting society. We call it C3S:
 #. Creative Commons Collecting Society. This will be a tremendous effort, so we
 #. need your support. Financial and other.
 #: omcevmembership/templates/why.pt:43
 msgid "reason3"
-msgstr "Wir betreiben die Gründung einer neuen Verwertungsgesellschaft und nennen sie C3S: Creative Commons Collecting Society. Das Projekt ist mit großem Aufwand verbunden, weshalb wir Unterstützung brauchen, finanziell und auf andere Arten."
+msgstr ""
+"Wir betreiben die Gründung einer neuen Verwertungsgesellschaft und nennen"
+" sie C3S: Creative Commons Collecting Society. Das Projekt ist mit großem"
+" Aufwand verbunden, weshalb wir Unterstützung brauchen, finanziell und "
+"auf andere Arten."
 
-#~ msgid "nc-commercial-heading"
-#~ msgstr ""
+#: temp/temp/deform/deform/schema.py:100
+msgid "${value} is not a dictionary"
+msgstr ""
 
-#~ msgid "nc-commercial-text-1"
-#~ msgstr ""
+#: temp/temp/deform/deform/schema.py:107
+msgid "${value} has no ${key} key"
+msgstr ""
 
-#~ msgid "nc-commercial-text-2"
-#~ msgstr ""
+#: temp/temp/deform/deform/schema.py:146
+msgid "${value} is not iterable"
+msgstr ""
 
-#~ msgid "nc-commercial-text-3"
-#~ msgstr ""
+#: temp/temp/deform/deform/schema.py:150
+msgid "Required"
+msgstr ""
+
+#: temp/temp/deform/deform/widget.py:766
+msgid "Fields did not match"
+msgstr ""
+
+#: temp/temp/deform/deform/widget.py:767
+msgid "Value"
+msgstr ""
+
+#: temp/temp/deform/deform/widget.py:768
+msgid "Confirm Value"
+msgstr ""
+
+#: temp/temp/deform/deform/widget.py:816
+msgid "Password did not match confirm"
+msgstr ""
+
+#: temp/temp/deform/deform/widget.py:967
+msgid "Add ${subitem_title}"
+msgstr ""
+
+#: temp/temp/deform/deform/widget.py:1226
+msgid "Incomplete date"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/checked_password.pt:5
+msgid "Password"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/checked_password.pt:10
+msgid "Confirm Password"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/dateparts.pt:5
+#: temp/temp/deform/deform/templates/readonly/dateparts.pt:2
+msgid "Year"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/dateparts.pt:12
+#: temp/temp/deform/deform/templates/readonly/dateparts.pt:4
+msgid "Month"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/dateparts.pt:19
+#: temp/temp/deform/deform/templates/readonly/dateparts.pt:6
+msgid "Day"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/form.pt:20
+msgid "There was a problem with your submission"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/form.pt:22
+msgid "Errors have been highlighted below"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/mapping.pt:6
+msgid "There was a problem with this section"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/readonly/checked_password.pt:2
+#: temp/temp/deform/deform/templates/readonly/password.pt:2
+msgid "Password not displayed."
+msgstr ""
+
+#: temp/temp/deform/deform/templates/readonly/file_upload.pt:7
+msgid "Read-only."
+msgstr ""
+
+#: temp/temp/deform/deform/templates/readonly/radio_choice.pt:4
+#: temp/temp/deform/deform/templates/readonly/select.pt:4
+msgid "Selected"
+msgstr ""
+
+#: temp/temp/deform/deform/templates/readonly/radio_choice.pt:5
+#: temp/temp/deform/deform/templates/readonly/select.pt:5
+msgid "Not Selected"
+msgstr ""
+
