@@ -38,5 +38,6 @@ def initialize_sql(engine):
     Base.metadata.create_all(engine)
     try:
         populate()
-    except IntegrityError:
+    except IntegrityError:  # pragma: no cover
         transaction.abort()
+        # if data is already present in database the transaction is aborted
