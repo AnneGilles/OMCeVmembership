@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-01-14 02:43+0100\n"
+"POT-Creation-Date: 2012-01-14 02:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,6 +137,12 @@ msgstr ""
 #. license it.
 #: omcevmembership/templates/ideas.pt:25
 msgid "nc-commercial-text-3"
+msgstr ""
+
+#. Default: Disclaimer: these texts were made up while setting up this little app.
+#. They have not been approved by the team. YMMV.
+#: omcevmembership/templates/ideas.pt:28
+msgid "disclaimer-ymmv"
 msgstr ""
 
 #. Default: Please fill out this form and submit it. You will get a PDF document
