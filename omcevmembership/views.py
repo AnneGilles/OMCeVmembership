@@ -62,12 +62,14 @@ def generate_pdf(appstruct):
     fdf_file.write(fdf)
     fdf_file.close()
     
-    print os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename)).read()
+    # print os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename)).read()
+    os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename))
     
     # combine
-    print "combining with bank account form"
-    print os.popen('pdftk formoutput.pdf pdftk/bankaccount.pdf output combined.pdf').read()
-    print "combined personal form and bank form"
+    # print "combining with bank account form"
+    # print os.popen('pdftk formoutput.pdf pdftk/bankaccount.pdf output combined.pdf').read()
+    os.popen('pdftk formoutput.pdf pdftk/bankaccount.pdf output combined.pdf')
+    # print "combined personal form and bank form"
 
     
     # return a pdf file
