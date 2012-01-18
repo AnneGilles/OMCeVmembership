@@ -2,7 +2,7 @@ from pyramid.config import Configurator
 from sqlalchemy import engine_from_config
 
 from omcevmembership.models import initialize_sql
-
+from pyramid_beaker import session_factory_from_settings
 from pyramid.i18n import get_localizer
 from pyramid.i18n import get_locale_name
 from translationstring import TranslationStringFactory
@@ -16,7 +16,9 @@ def main(global_config, **settings):
     """
     engine = engine_from_config(settings, 'sqlalchemy.')
     initialize_sql(engine)
-    config = Configurator(settings=settings)
+    session_factory = session_factory_from_settings(settings)
+    config = Configurator(settings=settings,
+                          session_factory=session_factory)
     config.add_translation_dirs('omcevmembership:locale/')
     config.add_static_view('static', 'omcevmembership:static', cache_max_age=3600)
 
