@@ -64,7 +64,8 @@ class TestViews(unittest.TestCase):
                 self.assertEquals(result.content_type,
                                   'application/pdf')
                 print("size of pdf: " + str(len(result.body)))
-                # self.assertTrue(81000 > len(result.body) > 80500)
+                # check pdf size
+                self.assertTrue(81000 > len(result.body) > 78000)
 
         except CalledProcessError, cpe:
             print("pdftk not installed. skipping test!")
