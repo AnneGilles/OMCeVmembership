@@ -64,17 +64,17 @@ def join_membership(request):
 
     if 'form.submitted' in request.POST and form.validate():
         print "form was submitted and validated OK."
-        print "membership_type: " + str(form.data['membership_type'])
-        if 'supporter' in form.data['membership_type']:
-            print "found 'supporter'"
-            membership_fee = 42
-            FoerderMitglied = True
-            OrdentlichesMitglied = False
-        else:
-            print "'supporter' not found"
-            membership_fee = 23
-            FoerderMitglied = 'Off'
-            OrdentlichesMitglied = 'On'
+        #print "membership_type: " + str(form.data['membership_type'])
+        #if 'supporter' in form.data['membership_type']:
+        #    print "found 'supporter'"
+        #    membership_fee = 42
+        #    FoerderMitglied = True
+        #    OrdentlichesMitglied = False
+        #else:
+        #    print "'supporter' not found"
+        #    membership_fee = 23
+        #    FoerderMitglied = 'Off'
+        #    OrdentlichesMitglied = 'On'
 
         #print "request.POST: " + str(request.POST)
 
@@ -85,8 +85,8 @@ def join_membership(request):
             ('PostCodeCity', form.data['address2']),
             ('Telephone', form.data['phone']),
             ('Email', form.data['email']),
-            ('OrdentlichesMitglied', OrdentlichesMitglied), # not working
-            ('FoerderMitglied', FoerderMitglied), # not working. < ToDo ^
+            ('OrdentlichesMitglied', 'OrdentlichesMitglied'), # not working
+            ('FoerderMitglied', 'FoerderMitglied'), # not working. < ToDo ^
             ]
         #generate fdf string
         fdf = forge_fdf("", fields, [], [], [])
