@@ -59,7 +59,7 @@ class TestViews(unittest.TestCase):
             res = subprocess.check_call(["which", "pdftk"])
             if res == 0:
                 # go ahead with the tests
-                result = generate_pdf(mock_appstruct)                
+                result = generate_pdf(mock_appstruct)
 
                 self.assertEquals(result.content_type,
                                   'application/pdf')

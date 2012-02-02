@@ -24,17 +24,19 @@ DEBUG = True
 
 
 def why_view(request):
-    return {'project':'OMCeVmembership'}
+    return {'project': 'OMCeVmembership'}
+
 
 def types_view(request):
-    return {'project':'OMCeVmembership'}
+    return {'project': 'OMCeVmembership'}
+
 
 def home_view(request):
     """
     front page view,
     display a template with links
     """
-    return {'project':'OMCeVmembership'}
+    return {'project': 'OMCeVmembership'}
 
 #from pyramid.threadlocal import get_current_request
 
@@ -57,21 +59,22 @@ def generate_pdf(appstruct):
     # write to file
     my_fdf_filename = "fdf.fdf"
     import os
-    fdf_file = open(my_fdf_filename , "w")
+    fdf_file = open(my_fdf_filename, "w")
     # fdf_file.write(fdf.encode('utf8'))
     fdf_file.write(fdf)
     fdf_file.close()
-    
-    # print os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename)).read()
+
+    # print os.popen('pdftk pdftk/beitrittserklaerung.pdf
+    #    fill_form %s output formoutput.pdf flatten'% (my_fdf_filename)).read()
     os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename))
-    
+
     # combine
     # print "combining with bank account form"
-    # print os.popen('pdftk formoutput.pdf pdftk/bankaccount.pdf output combined.pdf').read()
+    # print os.popen(
+    #  'pdftk formoutput.pdf pdftk/bankaccount.pdf output combined.pdf').read()
     os.popen('pdftk formoutput.pdf pdftk/bankaccount.pdf output combined.pdf')
     # print "combined personal form and bank form"
 
-    
     # return a pdf file
     from pyramid.response import Response
     response = Response(content_type='application/pdf')
@@ -82,29 +85,33 @@ def generate_pdf(appstruct):
 def join_membership(request):
 
     locale_name = get_locale_name(request)
-    _ = TranslationStringFactory('OMCeVmembership') 
-    if DEBUG: print "-- locale_name: " + str(locale_name)
-
+    _ = TranslationStringFactory('OMCeVmembership')
+    if DEBUG:  # pragma: no cover
+        print "-- locale_name: " + str(locale_name)
 
     class Membership(colander.MappingSchema):
         """
         colander schema for membership application form
         """
-        lastname  = colander.SchemaNode(colander.String(),title=_(u"Lastname"))
-        surname = colander.SchemaNode(colander.String(),title=_(u'Surname'))
-        address1 = colander.SchemaNode(colander.String(),title=_(u'Street & No.'))
-        address2 = colander.SchemaNode(colander.String(),title=_(u'Post Code & City'))
-        email =  colander.SchemaNode(colander.String(),
-                                     title = _(u'Email Address'),
-                                     validator = colander.Email())
-        phone =  colander.SchemaNode(colander.String(), title=_(u'Phone'))
+        lastname = colander.SchemaNode(colander.String(),
+                                       title=_(u"Lastname"))
+        surname = colander.SchemaNode(colander.String(),
+                                      title=_(u'Surname'))
+        address1 = colander.SchemaNode(colander.String(),
+                                       title=_(u'Street & No.'))
+        address2 = colander.SchemaNode(colander.String(),
+                                       title=_(u'Post Code & City'))
+        email = colander.SchemaNode(colander.String(),
+                                     title=_(u'Email Address'),
+                                     validator=colander.Email())
+        phone = colander.SchemaNode(colander.String(), title=_(u'Phone'))
         country = colander.SchemaNode(colander.String(),
-                                      widget = deform.widget.SelectWidget(values=constants.country_codes()),)
+                                      widget=deform.widget.SelectWidget(
+                values=constants.country_codes()),)
         _LOCALE_ = colander.SchemaNode(colander.String(),
-                                       widget = deform.widget.HiddenWidget(),
+                                       widget=deform.widget.HiddenWidget(),
                                        default=locale_name)
         #print "locale_name: " + str(locale_name)
-
 
     schema = Membership()
     form = deform.Form(schema,
