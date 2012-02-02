@@ -51,9 +51,24 @@ class TestViews(unittest.TestCase):
             'phone': '0123 456789',
             'email': 'foo@example.com'
             }
-        result = generate_pdf(mock_appstruct)
 
-        self.assertEquals(result.content_type,
-                          'application/pdf')
-        print("size of pdf: " + str(len(result.body)))
-        #self.assertTrue(81000 > len(result.body) > 80500)
+        # a skipTest iff pdftk is not installed
+        import subprocess
+        from subprocess import CalledProcessError
+        try:
+            res = subprocess.check_call(["which", "pdftk"])
+            if res == 0:
+                # go ahead with the tests
+                result = generate_pdf(mock_appstruct)                
+
+                self.assertEquals(result.content_type,
+                                  'application/pdf')
+                print("size of pdf: " + str(len(result.body)))
+                # self.assertTrue(81000 > len(result.body) > 80500)
+
+        except CalledProcessError, cpe:
+            print("pdftk not installed. skipping test!")
+
+
+
+#    def test_join_membership(self)
