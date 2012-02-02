@@ -3,13 +3,7 @@ from sqlalchemy import engine_from_config
 
 from omcevmembership.models import initialize_sql
 from pyramid_beaker import session_factory_from_settings
-from pyramid.i18n import get_localizer
-from pyramid.i18n import get_locale_name
-from translationstring import TranslationStringFactory
 
-_ = TranslationStringFactory('deform')
-def translator(term):
-    return get_localizer(get_current_request()).translate(term)
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -20,7 +14,8 @@ def main(global_config, **settings):
     config = Configurator(settings=settings,
                           session_factory=session_factory)
     config.add_translation_dirs('omcevmembership:locale/')
-    config.add_static_view('static', 'omcevmembership:static', cache_max_age=3600)
+    config.add_static_view('static',
+                           'omcevmembership:static', cache_max_age=3600)
 
     config.add_subscriber('omcevmembership.subscribers.add_base_template',
                           'pyramid.events.BeforeRender')
@@ -46,4 +41,3 @@ def main(global_config, **settings):
                     route_name='beitrittserklaerung',
                     renderer='templates/join.pt')
     return config.make_wsgi_app()
-
