@@ -67,7 +67,7 @@ class TestViews(unittest.TestCase):
                 # check pdf size
                 self.assertTrue(81000 > len(result.body) > 78000)
 
-        except CalledProcessError, cpe:
+        except CalledProcessError, cpe:  # pragma: no cover
             print("pdftk not installed. skipping test!")
 
     def test_join_membership_nosubmit(self):
@@ -122,5 +122,5 @@ class TestViews(unittest.TestCase):
                 # check pdf size
                 self.assertTrue(81000 > len(result.body) > 78000)
 
-        except CalledProcessError, cpe:
+        except CalledProcessError, cpe:  # pragma: no cover
             print("pdftk not installed. skipping test!")
