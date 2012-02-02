@@ -103,7 +103,7 @@ class TestViews(unittest.TestCase):
                 'address2': 'address2',
                 'email': 'email@example.com',
                 'phone': 'phone',
-                'country': 'af',
+                'country': 'AF',
                 }
             )
         # a skipTest iff pdftk is not installed
