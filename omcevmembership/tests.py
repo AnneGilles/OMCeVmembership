@@ -103,6 +103,7 @@ class TestViews(unittest.TestCase):
                 'address2': 'address2',
                 'email': 'email@example.com',
                 'phone': 'phone',
+                '_LOCALE_': 'de',
                 'country': 'AF',
                 }
             )
