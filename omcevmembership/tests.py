@@ -70,6 +70,23 @@ class TestViews(unittest.TestCase):
         except CalledProcessError, cpe:
             print("pdftk not installed. skipping test!")
 
+    def test_join_membership_nosubmit(self):
+        from omcevmembership.views import join_membership
+        request = testing.DummyRequest()
+        result = join_membership(request)
+        #self.assertEqual(info['project'], 'OMCeVmembership')
+        #print result
+        self.assertTrue('form' in result)
 
+    def test_join_membership_non_validating(self):
+        from omcevmembership.views import join_membership
+        request = testing.DummyRequest(
+            post={
+                'submit': True
+                }
+            )
+        result = join_membership(request)
 
-#    def test_join_membership(self)
+        self.assertTrue('form' in result)
+        self.assertTrue('There was a problem with your submission'
+                        in str(result))
