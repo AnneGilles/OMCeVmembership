@@ -52,7 +52,6 @@ class TestViews(unittest.TestCase):
             'email': 'foo@example.com'
             }
 
-<<<<<<< Updated upstream
         # a skipTest iff pdftk is not installed
         import subprocess
         from subprocess import CalledProcessError
