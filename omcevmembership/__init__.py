@@ -41,8 +41,8 @@ def main(global_config, **settings):
                     route_name='types',
                     renderer='templates/membership_types.pt')
 
-    # beitrittserklaerung
-    config.add_route('beitrittserklaerung', '/beitrittserklaerung')
+    # membership application form
+    config.add_route('join', '/join')
     #    config.add_view('omcevmembership.views.join_membership',
     #                   route_name='beitrittserklaerung',
     #                    renderer='templates/join.pt'

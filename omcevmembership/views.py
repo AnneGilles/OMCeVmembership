@@ -116,15 +116,14 @@ def generate_pdf(appstruct):
 
 
 @view_config(renderer='templates/join.pt',
-             #name='beitrittsreklaerung',
-             route_name='beitrittserklaerung',
+             route_name='join',
              )
 def join_membership(request):
 
     locale_name = get_locale_name(request)
     _ = TranslationStringFactory('OMCeVmembership')
     if DEBUG:  # pragma: no cover
-        print("dir(request): " + str(dir(request)))
+        #print("dir(request): " + str(dir(request)))
         print "-- locale_name: " + str(locale_name)
 
     class Membership(colander.MappingSchema):
@@ -185,12 +184,12 @@ def join_membership(request):
     # renderer = config.maybe_dotted(renderer)
 
     #dir(form)
-    print dir(form.set_zpt_renderer(zpt_renderer))
+    #print dir(form.set_zpt_renderer(zpt_renderer))
     #return {'form': form.render()}
     #return {'form': form.renderer('omcevmembership:templates/join.pt')}
 
-    print("Nachname: " + translator('Surname'))
-    print("dir(_): " + str(dir(_)))
+    #print("Nachname: " + translator('Surname'))
+    #print("dir(_): " + str(dir(_)))
     print("_(Surname)): " + _('Surname'))
     form = form.render()
     return {'form': form}

@@ -34,7 +34,7 @@
         <a href="${request.route_url('why')}" i18n:translate="general-information-link">Why?</a>
       </li>
       <li>
-        <a href="${request.route_url('beitrittserklaerung')}" i18n:translate="join-link">Join!</a>
+        <a href="${request.route_url('join')}" i18n:translate="join-link">Join!</a>
       </li>
     </ul>
   </tal:block>
