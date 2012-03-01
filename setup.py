@@ -18,6 +18,8 @@ requires = [
     'fdfgen',
     'Babel',
     'lingua',
+    'waitress',
+    'transifex-client',
     ]
 
 if sys.version_info[:3] < (2,5,0):
