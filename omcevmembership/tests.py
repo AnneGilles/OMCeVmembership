@@ -51,9 +51,76 @@ class TestViews(unittest.TestCase):
             'phone': '0123 456789',
             'email': 'foo@example.com'
             }
-        result = generate_pdf(mock_appstruct)
 
-        self.assertEquals(result.content_type,
-                          'application/pdf')
-        print("size of pdf: " + str(len(result.body)))
-        #self.assertTrue(81000 > len(result.body) > 80500)
+        # a skipTest iff pdftk is not installed
+        import subprocess
+        from subprocess import CalledProcessError
+        try:
+            res = subprocess.check_call(["which", "pdftk"])
+            if res == 0:
+                # go ahead with the tests
+                result = generate_pdf(mock_appstruct)
+
+                self.assertEquals(result.content_type,
+                                  'application/pdf')
+                #print("size of pdf: " + str(len(result.body)))
+                # check pdf size
+                self.assertTrue(81000 > len(result.body) > 78000)
+
+        except CalledProcessError, cpe:  # pragma: no cover
+            print("pdftk not installed. skipping test!")
+
+    def test_join_membership_nosubmit(self):
+        from omcevmembership.views import join_membership
+        request = testing.DummyRequest()
+        result = join_membership(request)
+        #self.assertEqual(info['project'], 'OMCeVmembership')
+        #print result
+        self.assertTrue('form' in result)
+
+    def test_join_membership_non_validating(self):
+        from omcevmembership.views import join_membership
+        request = testing.DummyRequest(
+            post={
+                'submit': True,
+                # lots of values missing
+                }
+            )
+        result = join_membership(request)
+
+        self.assertTrue('form' in result)
+        self.assertTrue('There was a problem with your submission'
+                        in str(result))
+
+    def test_join_membership_validating(self):
+        from omcevmembership.views import join_membership
+        request = testing.DummyRequest(
+            post={
+                'submit': True,
+                'lastname': 'lastname',
+                'surname': 'surname',
+                'address1': 'address1',
+                'address2': 'address2',
+                'email': 'email@example.com',
+                'phone': 'phone',
+                '_LOCALE_': 'de',
+                'country': 'AF',
+                }
+            )
+        # a skipTest iff pdftk is not installed
+        import subprocess
+        from subprocess import CalledProcessError
+        try:
+            res = subprocess.check_call(["which", "pdftk"])
+            if res == 0:
+                # go ahead with the tests
+                result = join_membership(request)
+
+                self.assertEquals(result.content_type,
+                                  'application/pdf')
+                #print("size of pdf: " + str(len(result.body)))
+                # check pdf size
+                self.assertTrue(81000 > len(result.body) > 78000)
+
+        except CalledProcessError, cpe:  # pragma: no cover
+            print("pdftk not installed. skipping test!")
