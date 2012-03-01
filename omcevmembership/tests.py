@@ -52,6 +52,7 @@ class TestViews(unittest.TestCase):
             'email': 'foo@example.com'
             }
 
+<<<<<<< Updated upstream
         # a skipTest iff pdftk is not installed
         import subprocess
         from subprocess import CalledProcessError
@@ -70,12 +71,10 @@ class TestViews(unittest.TestCase):
         except CalledProcessError, cpe:  # pragma: no cover
             print("pdftk not installed. skipping test!")
 
-    def test_join_membership_nosubmit(self):
+    def test_join_membership_view_nosubmit(self):
         from omcevmembership.views import join_membership
         request = testing.DummyRequest()
         result = join_membership(request)
-        #self.assertEqual(info['project'], 'OMCeVmembership')
-        #print result
         self.assertTrue('form' in result)
 
     def test_join_membership_non_validating(self):

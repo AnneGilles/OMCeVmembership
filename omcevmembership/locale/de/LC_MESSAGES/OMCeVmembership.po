@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-01-14 02:48+0100\n"
+"POT-Creation-Date: 2012-01-14 03:37+0100\n"
 "PO-Revision-Date: 2012-01-14 03:23+0100\n"
 "Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -53,7 +53,9 @@ msgstr "Beitrittsformular zum Ausdrucken erstellen (PDF, 81KB)"
 #: omcevmembership/templates/membership_types.pt:8
 #: omcevmembership/templates/why.pt:8
 msgid "app-welcome"
-msgstr "Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic element> Wir würden uns über Dich als neues Mitglied freuen!"
+msgstr ""
+"Willkommen bei der OpenMusicContest.org e.V. Mitglieder App. <dynamic "
+"element> Wir würden uns über Dich als neues Mitglied freuen!"
 
 #. Default: Become a member
 #: omcevmembership/templates/home.pt:17
@@ -67,8 +69,7 @@ msgid "general-information-link"
 msgstr "Warum?"
 
 #. Default: Membership Options
-#: omcevmembership/templates/home.pt:23
-#: omcevmembership/templates/why.pt:53
+#: omcevmembership/templates/home.pt:23 omcevmembership/templates/why.pt:53
 msgid "membership-options-link"
 msgstr "Welche Mitgliedschaft?"
 
@@ -107,8 +108,7 @@ msgstr "OMC im IRC"
 
 #. Default: Ideas for the Future
 #. Default: Membership Form
-#: omcevmembership/templates/ideas.pt:9
-#: omcevmembership/templates/join.pt:14
+#: omcevmembership/templates/ideas.pt:9 omcevmembership/templates/join.pt:14
 msgid "membership-form"
 msgstr "Beitrittserklärung"
 
@@ -152,7 +152,9 @@ msgstr ""
 #. They have not been approved by the team. YMMV.
 #: omcevmembership/templates/ideas.pt:28
 msgid "disclaimer-ymmv"
-msgstr "Disclaimer: Diese Texte wurden wärend der Erstellung dieser WebApp adhoc erfunden. Sie wurden nicht mit dem Team abgesprochen. Alles ohne Gewähr!"
+msgstr ""
+"Disclaimer: Diese Texte wurden wärend der Erstellung dieser WebApp adhoc "
+"erfunden. Sie wurden nicht mit dem Team abgesprochen. Alles ohne Gewähr!"
 
 #. Default: Please fill out this form and submit it. You will get a PDF
 #. document
@@ -162,7 +164,11 @@ msgstr "Disclaimer: Diese Texte wurden wärend der Erstellung dieser WebApp adho
 #. account. Then print the document and sign it and finally mail it back to us.
 #: omcevmembership/templates/join.pt:17
 msgid "join-form-intro"
-msgstr "Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann bitte ausdrucken, unterschreiben und an uns zurücksenden."
+msgstr ""
+"Bitte fülle das Formular aus und sende es ab. Du wirst ein PDF-Dokument "
+"erhalten, welches die angegebenen Werte enthält. Falls Du automatisierten"
+" Bankeinzug als Zahlungsweise möchtest, fülle die zweite Seite aus. Dann "
+"bitte ausdrucken, unterschreiben und an uns zurücksenden."
 
 #. Default: Membership Types
 #: omcevmembership/templates/membership_types.pt:14
@@ -188,7 +194,9 @@ msgstr "Unterstützungsmitglieder bezahlen 42 Euro pro Jahr."
 #. donation.
 #: omcevmembership/templates/membership_types.pt:26
 msgid "donations"
-msgstr "Unser Verein ist als gemeinnützig eingetragen. Spenden können von der Steuer abgesetzt werden."
+msgstr ""
+"Unser Verein ist als gemeinnützig eingetragen. Spenden können von der "
+"Steuer abgesetzt werden."
 
 #. Default: Some good reasons.
 #: omcevmembership/templates/why.pt:13
@@ -206,7 +214,10 @@ msgstr "Eine neue Verwertungsgesellschaft"
 #. standard.
 #: omcevmembership/templates/why.pt:17
 msgid "history1"
-msgstr "Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils steigendem Interesse der Community. Creative Commons-Lizenzen haben sich als Standard etabliert."
+msgstr ""
+"Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils "
+"steigendem Interesse der Community. Creative Commons-Lizenzen haben sich "
+"als Standard etabliert."
 
 #. Default: GEMA, the one and only collecting society with regard to music in
 #. germany has been a problem and sometimes a real show-stopper. Every time you
@@ -215,7 +226,12 @@ msgstr "Wir habe den Open Music Contest vier mal durchgeführt, mit jeweils stei
 #. were entirely GEMA-free.
 #: omcevmembership/templates/why.pt:24
 msgid "history2"
-msgstr "Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in Deutschland, hat dabei oftmals für Probleme gesorgt und hätte die Projekte teilweise fast scheitern lassen. Jede Pressung von CDs beim Presswerk erfordert eine Freigabe durch die GEMA. Auch wenn die Inhalte völlig GEMA-frei waren."
+msgstr ""
+"Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in "
+"Deutschland, hat dabei oftmals für Probleme gesorgt und hätte die "
+"Projekte teilweise fast scheitern lassen. Jede Pressung von CDs beim "
+"Presswerk erfordert eine Freigabe durch die GEMA. Auch wenn die Inhalte "
+"völlig GEMA-frei waren."
 
 #. Default: GEMA does not support Creative Commons Licenses. The artists
 #. registered
@@ -223,21 +239,32 @@ msgstr "Die GEMA, als einzige für Musik zuständige Verwertungsgesellschaft in 
 #. change.
 #: omcevmembership/templates/why.pt:32
 msgid "reason1"
-msgstr "Die GEMA erlaubt ihren Mitgliedern nicht die Lizensierung und Abgabe einzelner Stücke unter Creative Commons-Lizenzen. Künstler haben nicht die Freiheit, mit ihrer Musik zu tun was sie wünschen. Das wird sich nicht verändern."
+msgstr ""
+"Die GEMA erlaubt ihren Mitgliedern nicht die Lizensierung und Abgabe "
+"einzelner Stücke unter Creative Commons-Lizenzen. Künstler haben nicht "
+"die Freiheit, mit ihrer Musik zu tun was sie wünschen. Das wird sich "
+"nicht verändern."
 
 #. Default: Likewise, artists who do not join GEMA for whatever reasons have no
 #. way
 #. to get their share of the royalties GEMA collects.
 #: omcevmembership/templates/why.pt:36
 msgid "reason2"
-msgstr "Ebenfalls können Künstler, die aus irgend welchen Gründen nicht der GEMA beitreten, nicht an der Ausschüttung der Tantiemen teilhaben, die die GEMA pauschal für alle gespielte Musik einsammelt."
+msgstr ""
+"Ebenfalls können Künstler, die aus irgend welchen Gründen nicht der GEMA "
+"beitreten, nicht an der Ausschüttung der Tantiemen teilhaben, die die "
+"GEMA pauschal für alle gespielte Musik einsammelt."
 
 #. Default: We are about to set up a new collecting society. We call it C3S:
 #. Creative Commons Collecting Society. This will be a tremendous effort, so we
 #. need your support. Financial and other.
 #: omcevmembership/templates/why.pt:43
 msgid "reason3"
-msgstr "Wir betreiben die Gründung einer neuen Verwertungsgesellschaft und nennen sie C3S: Creative Commons Collecting Society. Das Projekt ist mit großem Aufwand verbunden, weshalb wir Unterstützung brauchen, finanziell und auf andere Arten."
+msgstr ""
+"Wir betreiben die Gründung einer neuen Verwertungsgesellschaft und nennen"
+" sie C3S: Creative Commons Collecting Society. Das Projekt ist mit großem"
+" Aufwand verbunden, weshalb wir Unterstützung brauchen, finanziell und "
+"auf andere Arten."
 
 #: temp/temp/deform/deform/schema.py:100
 msgid "${value} is not a dictionary"

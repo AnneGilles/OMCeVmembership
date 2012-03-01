@@ -2,21 +2,56 @@
 
 #from omcevmembership.models import DBSession
 #from omcevmembership.models import MyModel
+from pyramid.view import view_config
+from pyramid.threadlocal import get_current_request
 
 import deform
 #from deform import Form
-from deform import ValidationFailure
+from deform import (
+    ValidationFailure,
+    ZPTRendererFactory,
+    )
 #import formencode
 
 #from translationstring import TranslationStringFactory
 from pyramid.i18n import TranslationStringFactory
+from pkg_resources import resource_filename
+
+
+def renderer_factory(request=None):
+    translator = request.translate
+    renderer_factory = ZPTRendererFactory(
+        #search_path=search_path,
+        translator=translator)
+    return renderer_factory
+
+
+class Form(deform.Form):
+
+    def __init__(self, request, *args, **kwargs):
+        kwargs['renderer'] = renderer_factory(request)
+        deform.Form.__init__(self, *args, **kwargs)
+
 _ = TranslationStringFactory('OMCeVmembership')
+
+
+def translator(term):
+    print("this is def translator")
+    print(term)
+    return get_localizer(get_current_request()).translate(term)
+
+deform_template_dir = resource_filename('omcevmembership', 'templates/')
+
+zpt_renderer = deform.ZPTRendererFactory(
+    [deform_template_dir], translator=translator)
+
+# the zpt_renderer above is referred to within the demo.ini file by dotted name
 
 from fdfgen import forge_fdf
 #from datetime import datetime
 
 from pyramid.i18n import (
-#    get_localizer,
+    get_localizer,
     get_locale_name,
     )
 
@@ -64,8 +99,6 @@ def generate_pdf(appstruct):
     fdf_file.write(fdf)
     fdf_file.close()
 
-    # print os.popen('pdftk pdftk/beitrittserklaerung.pdf
-    #    fill_form %s output formoutput.pdf flatten'% (my_fdf_filename)).read()
     os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename))
 
     # combine
@@ -82,11 +115,16 @@ def generate_pdf(appstruct):
     return response
 
 
+@view_config(renderer='templates/join.pt',
+             #name='beitrittsreklaerung',
+             route_name='beitrittserklaerung',
+             )
 def join_membership(request):
 
     locale_name = get_locale_name(request)
     _ = TranslationStringFactory('OMCeVmembership')
     if DEBUG:  # pragma: no cover
+        print("dir(request): " + str(dir(request)))
         print "-- locale_name: " + str(locale_name)
 
     class Membership(colander.MappingSchema):
@@ -107,13 +145,15 @@ def join_membership(request):
         phone = colander.SchemaNode(colander.String(), title=_(u'Phone'))
         country = colander.SchemaNode(colander.String(),
                                       widget=deform.widget.SelectWidget(
-                values=constants.country_codes()),)
+                                          values=constants.country_codes()),)
         _LOCALE_ = colander.SchemaNode(colander.String(),
                                        widget=deform.widget.HiddenWidget(),
                                        default=locale_name)
         #print "locale_name: " + str(locale_name)
 
     schema = Membership()
+    #deform.Form.set_default_renderer(zpt_renderer)
+    #print dir(deform.Form)
     form = deform.Form(schema,
                        #buttons=(_('Submit'),), use_ajax=True)
                        buttons=[deform.Button('submit', _('Submit'))],
@@ -128,13 +168,29 @@ def join_membership(request):
             print "the controls: " + str(controls)
             print "the appstruct: " + str(appstruct)
         except ValidationFailure, e:
-            return{'form': e.render()}
+            print(e)
+            #import pdb
+            #pdb.set_trace()
+            return{'form': e.render(),
+                   'foo': 'bar'}
 
         print "form was submitted and validated OK."
         return generate_pdf(appstruct)
         #return {'form':'OK'}
 
-    return {'form': form.render()}
+    #import pdb
+    #pdb.set_trace()
 
-    #form = form.render()
-    #return {'form': form}
+    #renderer = zpt_renderer  # settings['omcevmembership.renderer']
+    # renderer = config.maybe_dotted(renderer)
+
+    #dir(form)
+    print dir(form.set_zpt_renderer(zpt_renderer))
+    #return {'form': form.render()}
+    #return {'form': form.renderer('omcevmembership:templates/join.pt')}
+
+    print("Nachname: " + translator('Surname'))
+    print("dir(_): " + str(dir(_)))
+    print("_(Surname)): " + _('Surname'))
+    form = form.render()
+    return {'form': form}

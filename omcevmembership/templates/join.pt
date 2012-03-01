@@ -19,10 +19,12 @@
       If you want us to retract your membership fee from your bank account in an automatized way, 
       add information about your bank account. Then print the document and sign it and finally mail it back to us.
     </p>
-    <p>
-      &nbsp;
+    <p i18n:translate="">
+      Lastname
     </p>
-    <span i18n:translate="" tal:replace="structure form"/>
+    form:
+    <div id="form" tal:replace="structure form"/>
+    end form
     <strong tal:repeat="message request.session.pop_flash()">
       ${message}
     </strong>

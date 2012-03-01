@@ -13,12 +13,18 @@ def main(global_config, **settings):
     session_factory = session_factory_from_settings(settings)
     config = Configurator(settings=settings,
                           session_factory=session_factory)
+
+#    renderer = settings['omcevmembership.renderer']
+#    renderer = config.maybe_dotted(renderer)
+
     config.add_translation_dirs('omcevmembership:locale/')
     config.add_static_view('static',
                            'omcevmembership:static', cache_max_age=3600)
 
     config.add_subscriber('omcevmembership.subscribers.add_base_template',
                           'pyramid.events.BeforeRender')
+    config.add_subscriber('omcevmembership.subscribers.add_locale_to_cookie',
+                          'pyramid.events.NewRequest')
     # home /
     config.add_route('home', '/')
     config.add_view('omcevmembership.views.home_view',
@@ -37,7 +43,9 @@ def main(global_config, **settings):
 
     # beitrittserklaerung
     config.add_route('beitrittserklaerung', '/beitrittserklaerung')
-    config.add_view('omcevmembership.views.join_membership',
-                    route_name='beitrittserklaerung',
-                    renderer='templates/join.pt')
+    #    config.add_view('omcevmembership.views.join_membership',
+    #                   route_name='beitrittserklaerung',
+    #                    renderer='templates/join.pt'
+    #                    )
+    config.scan()
     return config.make_wsgi_app()
