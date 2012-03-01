@@ -1,8 +1,8 @@
 [main]
 host = https://www.transifex.net
 
-[OMCeVmembership.translations-template-for-omcevmembership]
-file_filter = translations/OMCeVmembership.translations-template-for-omcevmembership/<lang>.po
+[OMCeVmembership.POT]
+file_filter = translations/OMCeVmembership.POT/<lang>.po
 source_file = omcevmembership/locale/OMCeVmembership.pot
 source_lang = en
 trans.de = omcevmembership/locale/de/LC_MESSAGES/OMCeVmembership.po
