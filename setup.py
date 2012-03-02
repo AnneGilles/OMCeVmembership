@@ -21,6 +21,8 @@ requires = [
     'Babel',
     'lingua',
     'webtest',
+    'waitress',
+    'python-gnupg',
     ]
 
 if sys.version_info[:3] < (2,5,0):
