@@ -36,14 +36,13 @@ _ = TranslationStringFactory('OMCeVmembership')
 
 
 def translator(term):
-    print("this is def translator")
-    print(term)
     return get_localizer(get_current_request()).translate(term)
 
-deform_template_dir = resource_filename('omcevmembership', 'templates/')
+
+my_template_dir = resource_filename('omcevmembership', 'templates/')
 
 zpt_renderer = deform.ZPTRendererFactory(
-    [deform_template_dir], translator=translator)
+    [my_template_dir], translator=translator)
 
 # the zpt_renderer above is referred to within the demo.ini file by dotted name
 
@@ -72,6 +71,7 @@ def home_view(request):
     display a template with links
     """
     return {'project': 'OMCeVmembership'}
+
 
 #from pyramid.threadlocal import get_current_request
 
@@ -177,19 +177,5 @@ def join_membership(request):
         return generate_pdf(appstruct)
         #return {'form':'OK'}
 
-    #import pdb
-    #pdb.set_trace()
-
-    #renderer = zpt_renderer  # settings['omcevmembership.renderer']
-    # renderer = config.maybe_dotted(renderer)
-
-    #dir(form)
-    #print dir(form.set_zpt_renderer(zpt_renderer))
-    #return {'form': form.render()}
-    #return {'form': form.renderer('omcevmembership:templates/join.pt')}
-
-    #print("Nachname: " + translator('Surname'))
-    #print("dir(_): " + str(dir(_)))
-    print("_(Surname)): " + _('Surname'))
     form = form.render()
     return {'form': form}
