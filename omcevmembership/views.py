@@ -1,21 +1,23 @@
 # -*- coding: utf-8 -*-
 
 from omcevmembership.utils import generate_pdf
-#from omcevmembership.models import DBSession
-#from omcevmembership.models import MyModel
-from pyramid.view import view_config
-from pyramid.threadlocal import get_current_request
-
+from pkg_resources import resource_filename
+import colander
+from webhelpers import constants
 import deform
 from deform import (
     ValidationFailure,
     ZPTRendererFactory,
     )
-#import formencode
 
-#from translationstring import TranslationStringFactory
-from pyramid.i18n import TranslationStringFactory
-from pkg_resources import resource_filename
+from pyramid.i18n import (
+    TranslationStringFactory,
+    get_localizer,
+    get_locale_name,
+    )
+from pyramid.view import view_config
+from pyramid.threadlocal import get_current_request
+
 
 
 def renderer_factory(request=None):
@@ -43,14 +45,7 @@ my_template_dir = resource_filename('omcevmembership', 'templates/')
 
 zpt_renderer = deform.ZPTRendererFactory(
     [my_template_dir], translator=translator)
-
 # the zpt_renderer above is referred to within the demo.ini file by dotted name
-
-
-from pyramid.i18n import (
-    get_localizer,
-    get_locale_name,
-    )
 
 DEBUG = True
 
@@ -69,14 +64,6 @@ def home_view(request):
     display a template with links
     """
     return {'project': 'OMCeVmembership'}
-
-
-#from pyramid.threadlocal import get_current_request
-
-import colander
-from webhelpers import constants
-
-
 
 
 @view_config(renderer='templates/join.pt',
@@ -132,8 +119,6 @@ def join_membership(request):
             print "the appstruct: " + str(appstruct)
         except ValidationFailure, e:
             print(e)
-            #import pdb
-            #pdb.set_trace()
             return{'form': e.render(),
                    'foo': 'bar'}
 
