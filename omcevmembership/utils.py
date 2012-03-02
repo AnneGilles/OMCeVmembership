@@ -1,5 +1,6 @@
 from fdfgen import forge_fdf
 
+
 def generate_pdf(appstruct):
 
     fields = [
@@ -20,7 +21,9 @@ def generate_pdf(appstruct):
     fdf_file.write(fdf)
     fdf_file.close()
 
-    os.popen('pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten'% (my_fdf_filename))
+    the_command = "pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten" % (my_fdf_filename)
+
+    os.popen(the_command)
 
     # combine
     # print "combining with bank account form"

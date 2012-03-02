@@ -19,7 +19,6 @@ from pyramid.view import view_config
 from pyramid.threadlocal import get_current_request
 
 
-
 def renderer_factory(request=None):
     translator = request.translate
     renderer_factory = ZPTRendererFactory(
@@ -47,7 +46,7 @@ zpt_renderer = deform.ZPTRendererFactory(
     [my_template_dir], translator=translator)
 # the zpt_renderer above is referred to within the demo.ini file by dotted name
 
-DEBUG = True
+DEBUG = False
 
 
 def why_view(request):
@@ -103,6 +102,7 @@ def join_membership(request):
 
     schema = Membership()
     #deform.Form.set_default_renderer(zpt_renderer)
+    #deform.Field.set_default_renderer(zpt_renderer)
     #print dir(deform.Form)
     form = deform.Form(schema,
                        #buttons=(_('Submit'),), use_ajax=True)
@@ -115,14 +115,14 @@ def join_membership(request):
         try:
             appstruct = form.validate(controls)
 
-            print "the controls: " + str(controls)
-            print "the appstruct: " + str(appstruct)
+            #print "the controls: " + str(controls)
+            #print "the appstruct: " + str(appstruct)
         except ValidationFailure, e:
             print(e)
             return{'form': e.render(),
                    'foo': 'bar'}
 
-        print "form was submitted and validated OK."
+        #print "form was submitted and validated OK."
         return generate_pdf(appstruct)
         #return {'form':'OK'}
 

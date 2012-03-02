@@ -1,6 +1,7 @@
 from pyramid.renderers import get_renderer
 from pyramid.i18n import default_locale_negotiator
 
+
 def add_base_template(event):
     base = get_renderer('templates/base.pt').implementation()
     event.update({'base': base})
@@ -17,7 +18,8 @@ BROWSER_LANGUAGES = {
     'es': 'es',
     'fr': 'fr',
     # ...
-    }     
+    }
+
 
 def add_locale_to_cookie(event):
     locale = default_locale_negotiator(event.request)
