@@ -30,3 +30,22 @@ class FunctionalTests(unittest.TestCase):
         """load the front page, check string exists"""
         res = self.testapp.get('/', status=200)
         self.failUnless('OpenMusicContest.org e.V. Membership app' in res.body)
+
+    def test_lang_en(self):
+        """load the front page, check english string exists"""
+        res = self.testapp.reset()
+        res = self.testapp.get('/?_LOCALE_=en', status=200)
+        self.failUnless('Welcome to the OpenMusicContest.org' in res.body)
+
+    def test_lang_de(self):
+        """load the front page, check german string exists"""
+        res = self.testapp.get('/?_LOCALE_=de', status=200)
+        self.failUnless('Willkommen bei der OpenMusicContest.org' in res.body)
+
+    def test_no_cookies(self):
+        """load the front page, check default english string exists"""
+        res = self.testapp.reset()
+        res = self.testapp.get('/', status=200,
+                               headers={'Accept-Language': 'da, en-gb; q=0.8, en; q=0.7'})
+        self.failUnless('Welcome to the OpenMusicContest.org' in res.body)
+        
