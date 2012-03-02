@@ -17,7 +17,10 @@ def main(global_config, **settings):
 #    renderer = settings['omcevmembership.renderer']
 #    renderer = config.maybe_dotted(renderer)
 
-    config.add_translation_dirs('omcevmembership:locale/')
+    config.add_translation_dirs(
+        'colander:locale/',
+        'deform:locale/',
+        'omcevmembership:locale/')
     config.add_static_view('static',
                            'omcevmembership:static', cache_max_age=3600)
 
