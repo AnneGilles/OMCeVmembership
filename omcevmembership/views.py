@@ -29,22 +29,6 @@ omcevmembership_templates = resource_filename('omcevmembership', 'templates')
 
 my_search_path = (deform_templates, omcevmembership_templates)
 
-
-#def renderer_factory(request=None):
-#    print("=== this is renderer_factory")
-#    translator = request.translate
-#    renderer_factory = ZPTRendererFactory(
-#        search_path=search_path,
-#        translator=translator)
-#    return renderer_factory
-
-
-#class Form(deform.Form):
-#
-#    def __init__(self, request, *args, **kwargs):
-#        kwargs['renderer'] = renderer_factory(request)
-#        deform.Form.__init__(self, *args, **kwargs)
-
 _ = TranslationStringFactory('OMCeVmembership')
 
 
@@ -94,6 +78,14 @@ def join_membership(request):
     if DEBUG:  # pragma: no cover
         print "-- locale_name: " + str(locale_name)
 
+    # set default of Country select widget according to locale
+    LOCALE_COUNTRY_MAPPING = {
+        'de': 'DE',
+        'en': 'GB',
+        'fr': 'FR',
+        }
+    country_default = LOCALE_COUNTRY_MAPPING.get(locale_name)
+
     class Membership(colander.MappingSchema):
         """
         colander schema for membership application form
@@ -112,6 +104,7 @@ def join_membership(request):
         phone = colander.SchemaNode(colander.String(), title=_(u'Phone'))
         country = colander.SchemaNode(colander.String(),
                                       title=_(u'Country'),
+                                      default=country_default,
                                       widget=deform.widget.SelectWidget(
                 values=constants.country_codes()),)
         _LOCALE_ = colander.SchemaNode(colander.String(),
