@@ -17,6 +17,7 @@ def encrypt_with_gnupg(data):
 
     if os.path.exists("keys"):
         if DEBUG:  # pragma: no cover
+            print("===================================== GNUPG START")
             print "folder 'keys' exists"
         # shutil.rmtree("keys")     # delete to renew
         # print "deleted keys"
@@ -30,9 +31,9 @@ def encrypt_with_gnupg(data):
     # check if we have the membership key
     list_of_keys = gpg.list_keys()
     if DEBUG:  # pragma: no cover
-        print("the list of keys: " + repr(list_of_keys))
+        print("=== the list of keys: " + repr(list_of_keys))
 
-    if not 'membership' in list_of_keys:
+    if not 'Membership' in str(list_of_keys):
         # open and read key file
         # reading public key
         pubkey_file = open('keys/membership.asc', 'r')
@@ -41,6 +42,10 @@ def encrypt_with_gnupg(data):
 
         # import public key
         gpg.import_keys(pubkey_content)
+    else:
+        if DEBUG:  # pragma: no cover
+            print("=== not imported: key already known")
+        pass
 
     if DEBUG:  # pragma: no cover
         print "list_keys(): " + str(gpg.list_keys())
@@ -59,6 +64,8 @@ def encrypt_with_gnupg(data):
 
     #print "encrypted: " + str(encrypted)
     #print "len(encrypted): " + str(len(str(encrypted)))
+    if DEBUG:  # pragma: no cover
+        print ("========================================== GNUPG END")
     return encrypted
 
 
