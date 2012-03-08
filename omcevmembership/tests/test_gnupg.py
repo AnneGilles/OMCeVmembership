@@ -1,4 +1,5 @@
 import unittest
+import os
 from pyramid import testing
 
 from omcevmembership.models import DBSession
@@ -23,6 +24,14 @@ class TestGnuPG(unittest.TestCase):
 
     def test_encrypt_with_gnupg(self):
         from omcevmembership.gnupg_encrypt import encrypt_with_gnupg
+        result = encrypt_with_gnupg('foo')
+        #print ("the result: " + str(result))
+        self.assertTrue('-----BEGIN PGP MESSAGE-----' in str(result))
+        self.assertTrue('-----END PGP MESSAGE-----' in str(result))
+
+    def test_encrypt_with_gnupg_import_key(self):
+        from omcevmembership.gnupg_encrypt import encrypt_with_gnupg
+        os.unlink('keys/pubring.gpg')
         result = encrypt_with_gnupg('foo')
         #print ("the result: " + str(result))
         self.assertTrue('-----BEGIN PGP MESSAGE-----' in str(result))

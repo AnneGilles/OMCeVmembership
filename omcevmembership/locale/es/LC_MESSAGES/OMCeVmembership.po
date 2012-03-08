@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OMCeVmembership 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-01-14 03:37+0100\n"
+"POT-Creation-Date: 2012-03-08 14:34+0100\n"
 "PO-Revision-Date: 2011-11-09 14:45+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: es <LL@li.org>\n"
@@ -18,31 +18,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: omcevmembership/views.py:91
+#: env/lib/python2.7/site-packages/colander-0.9.6-py2.7.egg/colander/__init__.py:264
+msgid "Invalid email address"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/colander-0.9.6-py2.7.egg/colander/__init__.py:1597
+#: env/lib/python2.7/site-packages/colander-0.9.6-py2.7.egg/colander/__init__.py:1599
+#: env/lib/python2.7/site-packages/deform-0.9.4-py2.7.egg/deform/schema.py:150
+msgid "Required"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/deform-0.9.4-py2.7.egg/deform/templates/form.pt:19
+msgid "There was a problem with your submission"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/deform-0.9.4-py2.7.egg/deform/templates/form.pt:21
+msgid "Errors have been highlighted below"
+msgstr ""
+
+#: env/lib/python2.7/site-packages/deform-0.9.4-py2.7.egg/deform/templates/mapping.pt:6
+msgid "There was a problem with this section"
+msgstr ""
+
+#: omcevmembership/views.py:106 omcevmembership/templates/join.pt:22
 msgid "Lastname"
 msgstr ""
 
-#: omcevmembership/views.py:92
+#: omcevmembership/views.py:108
 msgid "Surname"
 msgstr ""
 
-#: omcevmembership/views.py:93
+#: omcevmembership/views.py:110
 msgid "Street & No."
 msgstr ""
 
-#: omcevmembership/views.py:94
+#: omcevmembership/views.py:112
 msgid "Post Code & City"
 msgstr ""
 
-#: omcevmembership/views.py:96
+#: omcevmembership/views.py:114
 msgid "Email Address"
 msgstr ""
 
-#: omcevmembership/views.py:98
+#: omcevmembership/views.py:116
 msgid "Phone"
 msgstr ""
 
-#: omcevmembership/views.py:110
+#: omcevmembership/views.py:118
+msgid "Country"
+msgstr ""
+
+#: omcevmembership/views.py:128
 msgid "Submit"
 msgstr ""
 
@@ -104,52 +130,9 @@ msgstr ""
 msgid "omc-irc-link"
 msgstr ""
 
-#. Default: Ideas for the Future
 #. Default: Membership Form
-#: omcevmembership/templates/ideas.pt:9 omcevmembership/templates/join.pt:14
+#: omcevmembership/templates/join.pt:14
 msgid "membership-form"
-msgstr ""
-
-#. Default: The Commercial Aspect of Non-Commercial Licenses
-#: omcevmembership/templates/ideas.pt:12
-msgid "nc-commercial-heading"
-msgstr ""
-
-#. Default: When you are releasing a thing under a Creative Commons license
-#. including the NC feature (shorthand for non-commercial), you are giving it
-#. away
-#. for free for so-called non-commercial use. It may not be used commercially.
-#. At
-#. least not without your permission.
-#: omcevmembership/templates/ideas.pt:13
-msgid "nc-commercial-text-1"
-msgstr ""
-
-#. Default: So there is a commercial aspect of NC licenses. Licensees indending
-#. to
-#. use your work must talk to you and have your permission. We will offer this
-#. functionality through our service, as a one-stop shop for all institutions
-#. or
-#. companies searching for content.
-#: omcevmembership/templates/ideas.pt:19
-msgid "nc-commercial-text-2"
-msgstr ""
-
-#. Default: Imagine you could set a fee for your work to be used, maybe
-#. depending
-#. on that institutions type or a companies size. Licensees would be able to
-#. see
-#. how much it would be for them to use it, possibly preview your work and then
-#. license it.
-#: omcevmembership/templates/ideas.pt:25
-msgid "nc-commercial-text-3"
-msgstr ""
-
-#. Default: Disclaimer: these texts were made up while setting up this little
-#. app.
-#. They have not been approved by the team. YMMV.
-#: omcevmembership/templates/ideas.pt:28
-msgid "disclaimer-ymmv"
 msgstr ""
 
 #. Default: Please fill out this form and submit it. You will get a PDF
@@ -237,97 +220,72 @@ msgstr ""
 msgid "reason3"
 msgstr ""
 
-#: temp/temp/deform/deform/schema.py:100
-msgid "${value} is not a dictionary"
-msgstr ""
+#~ msgid "nc-commercial-heading"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/schema.py:107
-msgid "${value} has no ${key} key"
-msgstr ""
+#~ msgid "nc-commercial-text-1"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/schema.py:146
-msgid "${value} is not iterable"
-msgstr ""
+#~ msgid "nc-commercial-text-2"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/schema.py:150
-msgid "Required"
-msgstr ""
+#~ msgid "nc-commercial-text-3"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/widget.py:766
-msgid "Fields did not match"
-msgstr ""
+#~ msgid "disclaimer-ymmv"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/widget.py:767
-msgid "Value"
-msgstr ""
+#~ msgid "${value} is not a dictionary"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/widget.py:768
-msgid "Confirm Value"
-msgstr ""
+#~ msgid "${value} has no ${key} key"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/widget.py:816
-msgid "Password did not match confirm"
-msgstr ""
+#~ msgid "${value} is not iterable"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/widget.py:967
-msgid "Add ${subitem_title}"
-msgstr ""
+#~ msgid "Fields did not match"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/widget.py:1226
-msgid "Incomplete date"
-msgstr ""
+#~ msgid "Value"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/checked_password.pt:5
-msgid "Password"
-msgstr ""
+#~ msgid "Confirm Value"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/checked_password.pt:10
-msgid "Confirm Password"
-msgstr ""
+#~ msgid "Password did not match confirm"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/dateparts.pt:5
-#: temp/temp/deform/deform/templates/readonly/dateparts.pt:2
-msgid "Year"
-msgstr ""
+#~ msgid "Add ${subitem_title}"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/dateparts.pt:12
-#: temp/temp/deform/deform/templates/readonly/dateparts.pt:4
-msgid "Month"
-msgstr ""
+#~ msgid "Incomplete date"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/dateparts.pt:19
-#: temp/temp/deform/deform/templates/readonly/dateparts.pt:6
-msgid "Day"
-msgstr ""
+#~ msgid "Password"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/form.pt:20
-msgid "There was a problem with your submission"
-msgstr ""
+#~ msgid "Confirm Password"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/form.pt:22
-msgid "Errors have been highlighted below"
-msgstr ""
+#~ msgid "Year"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/mapping.pt:6
-msgid "There was a problem with this section"
-msgstr ""
+#~ msgid "Month"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/readonly/checked_password.pt:2
-#: temp/temp/deform/deform/templates/readonly/password.pt:2
-msgid "Password not displayed."
-msgstr ""
+#~ msgid "Day"
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/readonly/file_upload.pt:7
-msgid "Read-only."
-msgstr ""
+#~ msgid "Password not displayed."
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/readonly/radio_choice.pt:4
-#: temp/temp/deform/deform/templates/readonly/select.pt:4
-msgid "Selected"
-msgstr ""
+#~ msgid "Read-only."
+#~ msgstr ""
 
-#: temp/temp/deform/deform/templates/readonly/radio_choice.pt:5
-#: temp/temp/deform/deform/templates/readonly/select.pt:5
-msgid "Not Selected"
-msgstr ""
+#~ msgid "Selected"
+#~ msgstr ""
+
+#~ msgid "Not Selected"
+#~ msgstr ""
 

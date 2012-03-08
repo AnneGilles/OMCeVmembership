@@ -1,3 +1,5 @@
+#!/bin/env/python
+# -*- coding: utf-8 -*-
 # http://docs.pylonsproject.org/projects/pyramid/dev/narr/testing.html
 #                                            #creating-functional-tests
 import unittest
@@ -46,6 +48,31 @@ class FunctionalTests(unittest.TestCase):
         """load the front page, check default english string exists"""
         res = self.testapp.reset()
         res = self.testapp.get('/', status=200,
-                               headers={'Accept-Language': 'da, en-gb; q=0.8, en; q=0.7'})
+                               headers={
+                'Accept-Language': 'da,en-gb; q=0.8, en; q=0.7'})
         self.failUnless('Welcome to the OpenMusicContest.org' in res.body)
-        
+
+    def test_form_lang_en(self):
+        """load the join form, check english string exists"""
+        res = self.testapp.reset()
+        res = self.testapp.get('/join?_LOCALE_=en', status=200)
+        self.failUnless('Please fill out this' in res.body)
+
+    def test_form_lang_en_non_validating(self):
+        """load the join form, check english string exists"""
+        res = self.testapp.reset()
+        res = self.testapp.get('/join?_LOCALE_=en', status=200)
+
+        form = res.form
+        #print(form.fields)
+        #print(form.fields.values())
+        form['lastname'] = 'Doe'
+        form['surname'] = 'John'
+        res2 = form.submit('submit')
+        self.failUnless(
+            'There was a problem with your submission' in res2.body)
+
+    def test_form_lang_de(self):
+        """load the join form, check german string exists"""
+        res = self.testapp.get('/join?_LOCALE_=de', status=200)
+        self.failUnless('Bitte fülle das Formular aus' in res.body)

@@ -14,6 +14,7 @@ requires = [
     'pyramid_tm',
     'pyramid_debugtoolbar',
     'pyramid_beaker',
+    'pyramid_mailer',
     'zope.sqlalchemy',
     'deform',
     'webhelpers',

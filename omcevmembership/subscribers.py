@@ -1,5 +1,11 @@
 from pyramid.renderers import get_renderer
-from pyramid.i18n import default_locale_negotiator
+from pyramid.i18n import (
+    default_locale_negotiator,
+    )
+
+from translationstring import TranslationStringFactory
+
+tsf = TranslationStringFactory('OMCeVmembership')
 
 
 def add_base_template(event):
@@ -34,6 +40,6 @@ def add_locale_to_cookie(event):
     if locale is None and not event.request.accept_language:
         locale = 'en'
 
-    print "setting locale: " + str(locale)
+    #print "setting locale: " + str(locale)
     # event.request.cookies['_LOCALE_'] = locale
     event.request.response.set_cookie('_LOCALE_', value=locale)

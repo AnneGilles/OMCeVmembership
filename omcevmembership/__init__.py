@@ -14,9 +14,7 @@ def main(global_config, **settings):
     config = Configurator(settings=settings,
                           session_factory=session_factory)
 
-#    renderer = settings['omcevmembership.renderer']
-#    renderer = config.maybe_dotted(renderer)
-
+    config.include('pyramid_mailer')
     config.add_translation_dirs(
         'colander:locale/',
         'deform:locale/',
