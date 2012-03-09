@@ -6,4 +6,4 @@ file_filter = translations/OMCeVmembership.POT/<lang>.po
 source_file = omcevmembership/locale/OMCeVmembership.pot
 source_lang = en
 trans.de = omcevmembership/locale/de/LC_MESSAGES/OMCeVmembership.po
-
+type = PO
