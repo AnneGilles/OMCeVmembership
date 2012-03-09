@@ -29,7 +29,7 @@ def generate_pdf(appstruct):
     fdf_file.close()
 
     the_command = "pdftk pdftk/beitrittserklaerung.pdf fill_form \
-        %s output formoutput.pdf flatten" % (my_fdf_filename)
+        %s output formoutput.pdf flatten verbose" % (my_fdf_filename)
 
     if DEBUG:  # pragma: no cover
         print("== PDFTK: fill_form & flatten")
