@@ -34,7 +34,7 @@ def generate_pdf(appstruct):
 
     if DEBUG:  # pragma: no cover
         print("== PDFTK: fill_form & flatten")
-    pdftk_output = subprocess.Popen(the_command)
+    pdftk_output = subprocess.Popen([the_command])
     print(pdftk_output)
 
     # combine
