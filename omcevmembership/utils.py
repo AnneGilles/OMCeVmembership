@@ -1,3 +1,4 @@
+import subprocess
 from fdfgen import forge_fdf
 from pyramid_mailer.message import Message
 
@@ -29,11 +30,12 @@ def generate_pdf(appstruct):
     fdf_file.close()
 
     the_command = "pdftk pdftk/beitrittserklaerung.pdf fill_form \
-        %s output formoutput.pdf flatten" % (my_fdf_filename)
+        %s output formoutput.pdf flatten verbose" % (my_fdf_filename)
 
     if DEBUG:  # pragma: no cover
         print("== PDFTK: fill_form & flatten")
-    os.popen(the_command)
+    pdftk_output = subprocess.Popen([the_command])
+    print(pdftk_output)
 
     # combine
     if DEBUG:  # pragma: no cover
