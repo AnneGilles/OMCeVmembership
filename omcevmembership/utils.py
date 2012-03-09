@@ -1,3 +1,4 @@
+import subprocess
 from fdfgen import forge_fdf
 from pyramid_mailer.message import Message
 
