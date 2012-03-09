@@ -33,7 +33,7 @@ def generate_pdf(appstruct):
 
     if DEBUG:  # pragma: no cover
         print("== PDFTK: fill_form & flatten")
-    os.popen(the_command)
+    subprocess.check_call(the_command)
 
     # combine
     if DEBUG:  # pragma: no cover
