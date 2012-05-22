@@ -7,6 +7,8 @@ DEBUG = False
 
 def generate_pdf(appstruct):
 
+    DEBUG = False
+
     fields = [
         ('Name', appstruct['lastname']),
         ('Surname', appstruct['surname']),
@@ -29,13 +31,20 @@ def generate_pdf(appstruct):
         print("== PDFTK: close fdf file")
     fdf_file.close()
 
-    the_command = "pdftk pdftk/beitrittserklaerung.pdf fill_form \
-        %s output formoutput.pdf flatten verbose" % (my_fdf_filename)
+    the_command = 'pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten' % (my_fdf_filename)
 
     if DEBUG:  # pragma: no cover
         print("== PDFTK: fill_form & flatten")
-    pdftk_output = subprocess.Popen([the_command])
-    print(pdftk_output)
+    import shlex
+    args = shlex.split(the_command)
+    if DEBUG:  # pragma: no cover
+        print("the args: ")
+        print(args)
+        print("running pdftk...")
+    pdftk_output = subprocess.call(args)
+    if DEBUG:  # pragma: no cover
+        print("===== pdftk output ======")
+        print(pdftk_output)
 
     # combine
     if DEBUG:  # pragma: no cover

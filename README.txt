@@ -5,11 +5,15 @@ setup
 
 create a virtualenv, preferrably with the python 2.7 variant:
 
-$ virtualenv --no-site-packages .
+$ virtualenv env
+
+activate your new virtualenv:
+
+$ . env/bin/activate
 
 get ready for development:
 
-$ bin/python setup.py develop
+$ python setup.py develop
 
 this will take a little while and install all necessary dependencies.
 
@@ -17,10 +21,10 @@ this will take a little while and install all necessary dependencies.
 run (in development mode)
 =========================
 
-$ bin/paster serve development.ini --reload
+$ pserve development.ini --reload
 
 
 run (in production mode)
 ========================
 
-$ bin/paster serve production.ini
+$ pserve production.ini
