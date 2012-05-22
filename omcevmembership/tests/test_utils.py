@@ -53,6 +53,8 @@ class TestUtilities(unittest.TestCase):
                 # check pdf size
                 self.assertTrue(81000 > len(result.body) > 78000)
 
+                # TODO: check pdf for contents
+
         except CalledProcessError, cpe:  # pragma: no cover
             print("pdftk not installed. skipping test!")
             print(cpe)

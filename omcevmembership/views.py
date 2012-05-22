@@ -129,10 +129,11 @@ def join_membership(request):
 
         # send mail to accountants
         mailer = get_mailer(request)
-        mailer.send(accountant_mail(appstruct))
+
+        the_mail = accountant_mail(appstruct)
+        mailer.send(the_mail)
 
         return generate_pdf(appstruct)
-        #return {'form':'OK'}
 
     html = form.render()
 

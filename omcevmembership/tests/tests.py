@@ -69,15 +69,18 @@ class TestViews(unittest.TestCase):
 #                         in str(result))
 
     def test_join_membership_validating(self):
+        """
+        check that valid input to the join form produces a pdf
+        """
         from omcevmembership.views import join_membership
         from pyramid_mailer import get_mailer
         request = testing.DummyRequest(
             post={
                 'submit': True,
-                'lastname': 'lastname',
-                'surname': 'surname',
-                'address1': 'address1',
-                'address2': 'address2',
+                'lastname': 'LastName',
+                'surname': 'SurName',
+                'address1': 'Address1',
+                'address2': 'Address2',
                 'email': 'email@example.com',
                 'phone': 'phone',
                 '_LOCALE_': 'de',
@@ -99,6 +102,22 @@ class TestViews(unittest.TestCase):
                 #print("size of pdf: " + str(len(result.body)))
                 # check pdf size
                 self.assertTrue(81000 > len(result.body) > 78000)
+
+#                # check pdf contents
+#                import pyPdf
+#                content = ""
+#                from StringIO import StringIO
+#                resultstring = StringIO(result)
+#                pdf = pyPdf.PdfFileReader(resultstring)
+#                self.assertEquals(pdf.getNumPages(), 2)
+#                content += pdf.getPage(0).extractText()
+#                self.assertTrue('LastName' in content)
+#                self.assertTrue('SurName' in content)
+#                self.assertTrue('Address1' in content)
+#                self.assertTrue('Address2' in content)
+#                self.assertTrue('email@example.com' in content)
+#                self.assertTrue('phone' in content)
+#                self.assertTrue('Afgahnistan' in content)
 
                 # check outgoing mails
                 self.assertTrue(len(mailer.outbox) == 1)

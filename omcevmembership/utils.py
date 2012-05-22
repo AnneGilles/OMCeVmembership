@@ -1,6 +1,8 @@
 import subprocess
 from fdfgen import forge_fdf
+
 from pyramid_mailer.message import Message
+from pyramid_mailer.message import Attachment
 
 DEBUG = False
 
@@ -31,17 +33,19 @@ def generate_pdf(appstruct):
         print("== PDFTK: close fdf file")
     fdf_file.close()
 
-    the_command = 'pdftk pdftk/beitrittserklaerung.pdf fill_form %s output formoutput.pdf flatten' % (my_fdf_filename)
-
     if DEBUG:  # pragma: no cover
         print("== PDFTK: fill_form & flatten")
-    import shlex
-    args = shlex.split(the_command)
-    if DEBUG:  # pragma: no cover
-        print("the args: ")
-        print(args)
+
         print("running pdftk...")
-    pdftk_output = subprocess.call(args)
+    pdftk_output = subprocess.call([
+            'pdftk',
+            'pdftk/beitrittserklaerung.pdf',  # input pdf with form fields
+            'fill_form', my_fdf_filename,  # fill in values
+            'output', 'formoutput.pdf',  # output filename
+            'flatten',  # make form read-only
+            #'verbose'  # be verbose?
+            ])
+
     if DEBUG:  # pragma: no cover
         print("===== pdftk output ======")
         print(pdftk_output)
@@ -110,4 +114,10 @@ that's it.. bye!""" % (
         recipients=["c@openmusiccontest.org"],
         body=str(encrypt_with_gnupg(str(unencrypted)))
         )
+
+    attachment = Attachment("foo.gpg", "application/gpg-encryption",
+                            str(encrypt_with_gnupg("foo to the bar!")))
+    # TODO: make attachment contents a .csv
+    message.attach(attachment)
+
     return message
