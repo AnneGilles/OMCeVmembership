@@ -13,8 +13,8 @@ class FunctionalTests(unittest.TestCase):
     """
     def setUp(self):
         my_settings = {'sqlalchemy.url': 'sqlite://'}  # mock, not even used!?
-        from sqlalchemy import engine_from_config
-        engine = engine_from_config(my_settings)
+        #from sqlalchemy import engine_from_config
+        #engine = engine_from_config(my_settings)
 
         from omcevmembership import main
         app = main({}, **my_settings)
