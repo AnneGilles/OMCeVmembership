@@ -21,18 +21,23 @@ requires = [
     'fdfgen',
     'Babel',
     'lingua',
-    'webtest',
     'waitress',
     'python-gnupg',
     ]
 
-if sys.version_info[:3] < (2,5,0):
+test_requirements = [
+    'webtest',
+    'nose',
+    'coverage'
+    ]
+
+if sys.version_info[:3] < (2, 5, 0):
     requires.append('pysqlite')
 
 setup(name='OMCeVmembership',
       version='0.1',
       description='OMCeVmembership',
-      long_description=README + '\n\n' +  CHANGES,
+      long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Pylons",
@@ -47,15 +52,14 @@ setup(name='OMCeVmembership',
       include_package_data=True,
       zip_safe=False,
       test_suite='omcevmembership',
-      install_requires = requires,
-      entry_points = """\
+      install_requires=requires + test_requirements,
+      entry_points="""\
       [paste.app_factory]
       main = omcevmembership:main
       """,
       paster_plugins=['pyramid'],
-      message_extractors = { '.': [
-            ('**.py',   'lingua_python', None ),
-            ('**.pt',   'lingua_xml', None ),
+      message_extractors={'.': [
+            ('**.py', 'lingua_python', None),
+            ('**.pt', 'lingua_xml', None),
             ]},
       )
-
