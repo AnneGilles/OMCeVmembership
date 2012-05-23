@@ -30,6 +30,7 @@ test_requirements = [
     'nose',
     'coverage',
     'slate',  # pdf to text helper
+    'pdfminer',  # and its dependency
     ]
 
 if sys.version_info[:3] < (2, 5, 0):
