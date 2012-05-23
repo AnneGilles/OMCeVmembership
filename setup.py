@@ -28,7 +28,8 @@ requires = [
 test_requirements = [
     'webtest',
     'nose',
-    'coverage'
+    'coverage',
+    'slate',  # pdf to text helper
     ]
 
 if sys.version_info[:3] < (2, 5, 0):

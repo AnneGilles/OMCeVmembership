@@ -13,6 +13,9 @@ def _initTestingDB():
 
 
 class TestViews(unittest.TestCase):
+    """
+    very basic tests for the main views
+    """
     def setUp(self):
         self.config = testing.setUp()
         self.config.include('pyramid_mailer.testing')
@@ -71,6 +74,10 @@ class TestViews(unittest.TestCase):
     def test_join_membership_validating(self):
         """
         check that valid input to the join form produces a pdf
+        - with right content type of response
+        - with a certain size
+        - with appropriate content (form details)
+        and a mail would be sent
         """
         from omcevmembership.views import join_membership
         from pyramid_mailer import get_mailer
@@ -88,7 +95,7 @@ class TestViews(unittest.TestCase):
                 }
             )
         mailer = get_mailer(request)
-        # a skipTest iff pdftk is not installed
+        # skip test iff pdftk is not installed
         import subprocess
         from subprocess import CalledProcessError
         try:
@@ -103,21 +110,21 @@ class TestViews(unittest.TestCase):
                 # check pdf size
                 self.assertTrue(81000 > len(result.body) > 78000)
 
-#                # check pdf contents
-#                import pyPdf
-#                content = ""
-#                from StringIO import StringIO
-#                resultstring = StringIO(result)
-#                pdf = pyPdf.PdfFileReader(resultstring)
-#                self.assertEquals(pdf.getNumPages(), 2)
-#                content += pdf.getPage(0).extractText()
-#                self.assertTrue('LastName' in content)
-#                self.assertTrue('SurName' in content)
-#                self.assertTrue('Address1' in content)
-#                self.assertTrue('Address2' in content)
-#                self.assertTrue('email@example.com' in content)
-#                self.assertTrue('phone' in content)
-#                self.assertTrue('Afgahnistan' in content)
+                # check pdf contents
+                content = ""
+                from StringIO import StringIO
+                resultstring = StringIO(result.body)
+
+                import slate
+                content = slate.PDF(resultstring)
+
+                self.assertTrue('LastName' in str(content))
+                self.assertTrue('SurName' in str(content))
+                self.assertTrue('Address1' in str(content))
+                self.assertTrue('Address2' in str(content))
+                self.assertTrue('email@example.com' in str(content))
+                self.assertTrue('phone' in str(content))
+#                self.assertTrue('Afgahnistan' in str(content))
 
                 # check outgoing mails
                 self.assertTrue(len(mailer.outbox) == 1)
