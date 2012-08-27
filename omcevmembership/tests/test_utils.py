@@ -1,3 +1,4 @@
+# -*- coding: utf-8  -*-
 import unittest
 from pyramid import testing
 
@@ -30,12 +31,12 @@ class TestUtilities(unittest.TestCase):
         from omcevmembership.views import generate_pdf
 
         mock_appstruct = {
-            'lastname': 'Gilles',
-            'surname': 'Anne',
-            'address1': 'Sonnenhang 23',
-            'address2': '12345 Musterstadt',
-            'phone': '0123 456789',
-            'email': 'foo@example.com'
+            'lastname': u'Gilles',
+            'surname': u'Anne',
+            'address1': u'Sonnenstraße 23',
+            'address2': u'12345 Müsterstadt',
+            'phone': u'0123 456789',
+            'email': u'foo@example.com'
             }
 
         # a skipTest iff pdftk is not installed
