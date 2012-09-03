@@ -33,8 +33,8 @@ class TestUtilities(unittest.TestCase):
         mock_appstruct = {
             'lastname': u'Gilles',
             'surname': u'Anne',
-            'address1': u'Sonnenstraße 23',
-            'address2': u'12345 Müsterstadt',
+            'address1': 'Sonnenstraße 23',
+            'address2': '12345 Müsterstadt',
             'phone': u'0123 456789',
             'email': u'foo@example.com'
             }

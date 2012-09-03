@@ -1,3 +1,4 @@
+# -*- coding: utf-8  -*-
 import subprocess
 from fdfgen import forge_fdf
 
@@ -85,7 +86,7 @@ from omcevmembership.gnupg_encrypt import encrypt_with_gnupg
 
 def accountant_mail(appstruct):
 
-    unencrypted = """
+    unencrypted = u"""
 we got a new member through the membership form: \n
 lastname:  \t\t %s
 surname:   \t\t %s
@@ -96,13 +97,13 @@ phone:     \t\t %s
 country:   \t\t %s
 
 that's it.. bye!""" % (
-        appstruct['lastname'],
-        appstruct['surname'],
-        appstruct['address1'],
-        appstruct['address2'],
-        appstruct['email'],
-        appstruct['phone'],
-        appstruct['country']
+        unicode(appstruct['lastname']),
+        unicode(appstruct['surname']),
+        unicode(appstruct['address1']),
+        unicode(appstruct['address2']),
+        unicode(appstruct['email']),
+        unicode(appstruct['phone']),
+        unicode(appstruct['country'])
         )
 
     #print(unencrypted)
@@ -112,11 +113,11 @@ that's it.. bye!""" % (
         subject="[OMC membership] new member",
         sender="noreply@c-3-s.org",
         recipients=["c@openmusiccontest.org"],
-        body=str(encrypt_with_gnupg(str(unencrypted)))
+        body=str(encrypt_with_gnupg((unencrypted)))
         )
 
     attachment = Attachment("foo.gpg", "application/gpg-encryption",
-                            str(encrypt_with_gnupg("foo to the bar!")))
+                            unicode(encrypt_with_gnupg(u"foo to the bär!")))
     # TODO: make attachment contents a .csv
     message.attach(attachment)
 

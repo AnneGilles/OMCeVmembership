@@ -51,7 +51,8 @@ def encrypt_with_gnupg(data):
         print "list_keys(): " + str(gpg.list_keys())
 
     # prepare
-    to_encode = unicode(data, gpg.encoding)
+    #to_encode = unicode(data, gpg.encoding)
+    to_encode = data
     to_encrypt = to_encode.encode(gpg.encoding)
     if DEBUG:  # pragma: no cover
         print "len(to_encrypt): " + str(len(str(to_encrypt)))
