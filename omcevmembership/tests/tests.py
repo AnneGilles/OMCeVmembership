@@ -92,6 +92,7 @@ class TestViews(unittest.TestCase):
                 'phone': 'phone',
                 '_LOCALE_': 'de',
                 'country': 'AF',
+                'membership_type': 'supporter'
                 }
             )
         mailer = get_mailer(request)

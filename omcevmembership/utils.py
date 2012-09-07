@@ -19,6 +19,8 @@ def generate_pdf(appstruct):
         ('PostCodeCity', appstruct['address2']),
         ('Telephone', appstruct['phone']),
         ('Email', appstruct['email']),
+        ('mitgliedschaftstyp', 1 if appstruct[
+                'membership_type'] == 'member' else 2)
         ]
     #generate fdf string
     fdf = forge_fdf("", fields, [], [], [])
@@ -88,13 +90,15 @@ def accountant_mail(appstruct):
 
     unencrypted = u"""
 we got a new member through the membership form: \n
-lastname:  \t\t %s
-surname:   \t\t %s
-address1:  \t\t %s
-address2:  \t\t %s
-email:     \t\t %s
-phone:     \t\t %s
-country:   \t\t %s
+
+lastname:   \t\t %s
+surname:    \t\t %s
+address1:   \t\t %s
+address2:   \t\t %s
+email:      \t\t %s
+phone:      \t\t %s
+country:    \t\t %s
+type of membership: %s
 
 that's it.. bye!""" % (
         unicode(appstruct['lastname']),
@@ -103,7 +107,8 @@ that's it.. bye!""" % (
         unicode(appstruct['address2']),
         unicode(appstruct['email']),
         unicode(appstruct['phone']),
-        unicode(appstruct['country'])
+        unicode(appstruct['country']),
+        unicode(appstruct['membership_type'])
         )
 
     #print(unencrypted)
@@ -111,7 +116,7 @@ that's it.. bye!""" % (
 
     message = Message(
         subject="[OMC membership] new member",
-        sender="noreply@c-3-s.org",
+        sender="noreply@openmusiccontest.org",
         recipients=["c@openmusiccontest.org"],
         body=str(encrypt_with_gnupg((unencrypted)))
         )

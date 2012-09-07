@@ -110,6 +110,16 @@ def join_membership(request):
         _LOCALE_ = colander.SchemaNode(colander.String(),
                                        widget=deform.widget.HiddenWidget(),
                                        default=locale_name)
+        types_of_membership = (
+            ('member', _('Member (23 Euros per year)')),
+            ('supporter', _('Supporter (46 Euros per year)')))
+
+        membership_type = colander.SchemaNode(
+            colander.String(),
+            title=_('I choose the following type of membership:'),
+            validator=colander.OneOf([x[0] for x in types_of_membership]),
+            widget=deform.widget.RadioChoiceWidget(values=types_of_membership),
+            )
 
     schema = Membership()
 
@@ -123,6 +133,7 @@ def join_membership(request):
         controls = request.POST.items()
         try:
             appstruct = form.validate(controls)
+            # print(appstruct)
         except ValidationFailure, e:
             print(e)
             return{'form': e.render(), }

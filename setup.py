@@ -60,7 +60,7 @@ setup(name='OMCeVmembership',
       main = omcevmembership:main
       """,
       paster_plugins=['pyramid'],
-      message_extractors={'.': [
+      message_extractors={'omcevmembership': [
             ('**.py', 'lingua_python', None),
             ('**.pt', 'lingua_xml', None),
             ]},

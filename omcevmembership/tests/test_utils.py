@@ -33,10 +33,11 @@ class TestUtilities(unittest.TestCase):
         mock_appstruct = {
             'lastname': u'Gilles',
             'surname': u'Anne',
-            'address1': 'Sonnenstraße 23',
-            'address2': '12345 Müsterstadt',
+            'address1': u'Sonnenstraße 23',
+            'address2': u'12345 Müsterstadt',
             'phone': u'0123 456789',
-            'email': u'foo@example.com'
+            'email': u'foo@example.com',
+            'membership_type': u'supporter'
             }
 
         # a skipTest iff pdftk is not installed
@@ -73,6 +74,7 @@ class TestUtilities(unittest.TestCase):
             'email': 'john@example.com',
             'phone': '007 123 456',
             'country': 'af',
+            'membership_type': 'supporter',
             }
         result = accountant_mail(my_appstruct)
         from pyramid_mailer.message import Message
@@ -82,4 +84,4 @@ class TestUtilities(unittest.TestCase):
         self.assertTrue('-----BEGIN PGP MESSAGE-----' in result.body)
         self.assertTrue('-----END PGP MESSAGE-----' in result.body)
         self.assertTrue('[OMC membership] new member' in result.subject)
-        self.assertEquals('noreply@c-3-s.org', result.sender)
+        self.assertEquals('noreply@openmusiccontest.org', result.sender)
