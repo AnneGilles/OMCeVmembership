@@ -83,6 +83,28 @@ def generate_pdf(appstruct):
     response.app_iter = open("combined.pdf", "r")
     return response
 
+
+def generate_csv(appstruct):
+    from datetime import date
+    # prepare a csv with the supplied data and attach it to the email
+    # to ease import of new data sets
+    #
+    csv = u"%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s" % (
+        date.today().strftime("%Y-%m-%d"),  # date, e.g. 2012-09-02
+        ' ',  # place of signature
+        ' ',  # has signature
+        unicode(appstruct['lastname']),
+        unicode(appstruct['surname']),
+        unicode(appstruct['address1']),
+        unicode(appstruct['address2']),
+        unicode(appstruct['email']),
+        unicode(appstruct['phone']),
+        unicode(appstruct['country']),
+        2 if appstruct['membership_type'] == 'supporter' else 1
+        )
+    return csv
+
+
 from omcevmembership.gnupg_encrypt import encrypt_with_gnupg
 
 

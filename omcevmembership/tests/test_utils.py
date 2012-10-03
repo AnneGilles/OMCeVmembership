@@ -13,6 +13,18 @@ def _initTestingDB():
 
 
 class TestUtilities(unittest.TestCase):
+
+    some_appstruct = {
+            'lastname': 'Doe',
+            'surname': 'John',
+            'address1': 'In the Middle',
+            'address2': 'Of Nowhere',
+            'email': 'john@example.com',
+            'phone': '007 123 456',
+            'country': 'af',
+            'membership_type': 'supporter',
+            }
+
     def setUp(self):
         self.config = testing.setUp()
         self.config.include('pyramid_mailer.testing')
@@ -66,16 +78,7 @@ class TestUtilities(unittest.TestCase):
         test encryption of email payload
         """
         from omcevmembership.utils import accountant_mail
-        my_appstruct = {
-            'lastname': 'Doe',
-            'surname': 'John',
-            'address1': 'In the Middle',
-            'address2': 'Of Nowhere',
-            'email': 'john@example.com',
-            'phone': '007 123 456',
-            'country': 'af',
-            'membership_type': 'supporter',
-            }
+        my_appstruct = self.some_appstruct
         result = accountant_mail(my_appstruct)
         from pyramid_mailer.message import Message
 
@@ -85,3 +88,13 @@ class TestUtilities(unittest.TestCase):
         self.assertTrue('-----END PGP MESSAGE-----' in result.body)
         self.assertTrue('[OMC membership] new member' in result.subject)
         self.assertEquals('noreply@openmusiccontest.org', result.sender)
+
+    def test_generate_csv(self):
+        """
+        test csv generation
+        """
+        from omcevmembership.utils import generate_csv
+        my_appstruct = self.some_appstruct
+        result = generate_csv(my_appstruct)
+
+        print(result)
